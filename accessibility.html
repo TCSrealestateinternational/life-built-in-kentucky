@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Statement | Life Built in Kentucky</title>
+  <meta name="description" content="Accessibility statement for Life Built in Kentucky." />
+  <link rel="canonical" href="https://www.lifebuiltinkentucky.com/accessibility.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --white: #fefdfe; --forest: #335a3a; --sage: #668c66;
+      --mist: #8faf9a; --linen: #d8d2c8; --deep: #3f5d4a; --ink: #1e2e22;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'PT Serif', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--ink); overflow-x: hidden; }
+    a { color: var(--forest); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(254,253,254,0.97);
+      box-shadow: 0 1px 0 var(--linen);
+    }
+    nav .logo img { height: 52px; width: auto; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep); text-decoration: none; }
+    nav ul a:hover { color: var(--forest); }
+    nav .nav-cta { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.55rem 1.4rem; border: 1px solid var(--forest); color: var(--forest); border-radius: 2px; text-decoration: none; }
+    nav .nav-cta:hover { background: var(--forest); color: var(--white); }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } nav ul { display: none; } }
+    main { max-width: 800px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--forest); margin-bottom: 0.5rem; }
+    .updated { font-size: 0.85rem; color: var(--sage); margin-bottom: 2.5rem; letter-spacing: 0.05em; }
+    h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; color: var(--ink); margin: 2rem 0 0.75rem; }
+    p, li { font-size: 1rem; line-height: 1.8; color: #3a4a3f; margin-bottom: 1rem; }
+    ul { padding-left: 1.5rem; list-style: disc; }
+    footer { background: var(--ink); padding: 2.5rem 2.5rem 2rem; margin-top: 4rem; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #5a7060; flex-wrap: wrap; gap: 0.75rem; }
+    .footer-bottom a { color: #5a7060; }
+    .footer-bottom a:hover { color: var(--mist); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo" aria-label="Life Built in Kentucky home">
+      <img src="/images/Logo.png" alt="Life Built in Kentucky" />
+    </a>
+    <ul>
+      <li><a href="/buy.html">Buy</a></li>
+      <li><a href="/sell.html">Sell</a></li>
+      <li><a href="/build.html">Build</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+    </ul>
+    <a href="/contact.html" class="nav-cta">Let's Talk</a>
+  </nav>
+
+  <main>
+    <h1>Accessibility Statement</h1>
+    <p class="updated">Last updated: March 2026</p>
+
+    <h2>Our Commitment</h2>
+    <p>Life Built in Kentucky is committed to ensuring this website is accessible to all visitors, including those with disabilities. We work to meet or exceed the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards.</p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Skip navigation links for keyboard users</li>
+      <li>Semantic HTML structure with proper heading hierarchy</li>
+      <li>Descriptive alt text for all meaningful images</li>
+      <li>Sufficient color contrast throughout the site</li>
+      <li>Keyboard-navigable menus and interactive elements</li>
+      <li>ARIA labels on navigation and interactive components</li>
+    </ul>
+
+    <h2>Known Limitations</h2>
+    <p>We are continually working to improve accessibility. If you encounter any barriers, please contact us and we will work to address them promptly.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you experience any difficulty accessing content on this site, please contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:home@lifebuiltinkentucky.com">home@lifebuiltinkentucky.com</a></li>
+      <li>Phone: <a href="tel:8596124044">859-612-4044</a></li>
+    </ul>
+    <p>We aim to respond to accessibility feedback within 2 business days.</p>
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Life Built in Kentucky &mdash; Toni Schafer, Realtor &amp; General Contractor</span>
+      <div>
+        <a href="/privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+        <a href="/accessibility.html">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
