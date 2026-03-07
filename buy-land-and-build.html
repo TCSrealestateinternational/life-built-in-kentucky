@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy Land and Build | Life Built in Kentucky</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root { --white:#fefdfe;--forest:#335a3a;--sage:#668c66;--mist:#8faf9a;--linen:#d8d2c8;--deep:#3f5d4a;--ink:#1e2e22;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'PT Serif',Georgia,serif;--ease:0.35s cubic-bezier(0.4,0,0.2,1); }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--font-body);background:var(--white);color:var(--ink);}
+    img{display:block;max-width:100%;}
+    a{color:inherit;text-decoration:none;}
+    ul{list-style:none;}
+    button{cursor:pointer;font-family:inherit;border:none;background:none;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(254,253,254,0.97);box-shadow:0 1px 0 var(--linen);}
+    .nav-logo{display:flex;align-items:center;height:56px;}
+    .nav-logo img{height:52px;width:auto;}
+    .nav-links{display:flex;gap:2rem;align-items:center;}
+    .nav-links a{font-family:var(--font-body);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--deep);transition:color var(--ease);position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--mist);transform:scaleX(0);transform-origin:left;transition:transform var(--ease);}
+    .nav-links a:hover::after{transform:scaleX(1);}
+    .nav-links a[aria-current="page"]{color:var(--forest);}
+    .nav-links a[aria-current="page"]::after{transform:scaleX(1);}
+    .nav-cta{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.55rem 1.4rem;border:1px solid var(--forest);color:var(--forest);border-radius:2px;transition:all var(--ease);}
+    .nav-cta:hover{background:var(--forest);color:var(--white);}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer;}
+    .nav-toggle span{display:block;width:24px;height:2px;background:var(--forest);border-radius:2px;}
+    .mobile-nav{display:none;position:fixed;inset:0;background:var(--ink);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;overflow-y:auto;padding:4rem 2rem;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav>a{font-family:var(--font-display);font-size:2rem;color:var(--white);transition:color var(--ease);}
+    .mobile-nav>a:hover{color:var(--mist);}
+    .mobile-nav-close{position:absolute;top:1.5rem;right:1.5rem;color:var(--white);font-size:1.5rem;cursor:pointer;}
+    .mobile-nav-section{font-family:var(--font-display);font-size:2rem;color:var(--white);}
+    .mobile-nav-sub{display:flex;flex-direction:column;align-items:center;gap:0.6rem;}
+    .mobile-nav-sub a{font-family:var(--font-body);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);transition:color var(--ease);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown-arrow{font-size:0.58rem;opacity:0.55;margin-left:2px;}
+    .nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 0.85rem);left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--linen);border-radius:4px;box-shadow:0 8px 28px rgba(30,46,34,0.13);min-width:210px;padding:0.5rem 0;z-index:200;list-style:none;}
+    .nav-dropdown:hover .nav-dropdown-menu{display:block;}
+    .nav-dropdown-menu li a{display:block;padding:0.65rem 1.25rem;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--deep);transition:color var(--ease),background var(--ease);white-space:nowrap;}
+    .nav-dropdown-menu li a::after{display:none;}
+    .nav-dropdown-menu li a:hover{background:var(--linen);color:var(--forest);}
+    .coming-soon{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;background:var(--linen);text-align:center;}
+    .coming-soon-inner{max-width:600px;}
+    .cs-label{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem;}
+    .cs-heading{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;line-height:1.05;color:var(--ink);margin-bottom:1.5rem;}
+    .cs-heading em{font-style:italic;color:var(--forest);}
+    .cs-body{font-size:1rem;line-height:1.8;color:#4a5a4e;margin-bottom:2.5rem;}
+    .btn-forest{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:var(--forest);color:var(--white);font-family:var(--font-body);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;border:1px solid var(--forest);transition:all var(--ease);}
+    .btn-forest:hover{background:var(--deep);transform:translateY(-2px);}
+    @media(max-width:768px){.nav{padding:1rem 1.5rem;}.nav-links,.nav-cta{display:none;}.nav-toggle{display:flex;}}
+  </style>
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Life Built in Kentucky Home">
+      <img src="/images/Logo.png" alt="Life Built in Kentucky logo" width="140" height="140" loading="eager" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/buy.html">Buy</a></li>
+      <li><a href="/sell.html">Sell</a></li>
+      <li class="nav-dropdown">
+        <a href="/build.html" aria-current="page">Build <span class="nav-dropdown-arrow" aria-hidden="true">&#9660;</span></a>
+        <ul class="nav-dropdown-menu" role="list">
+          <li><a href="/buy-land.html">Buy Land</a></li>
+          <li><a href="/buy-land-and-build.html">Buy Land &amp; Build</a></li>
+          <li><a href="/build-on-your-land.html">Build on Land You Own</a></li>
+        </ul>
+      </li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+    </ul>
+    <a href="/contact.html" class="nav-cta">Let's Talk</a>
+    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
+    <button class="mobile-nav-close" id="mobileNavClose">&#x2715;</button>
+    <a href="/buy.html">Buy</a>
+    <a href="/sell.html">Sell</a>
+    <span class="mobile-nav-section">Build</span>
+    <div class="mobile-nav-sub">
+      <a href="/buy-land.html">Buy Land</a>
+      <a href="/buy-land-and-build.html">Buy Land &amp; Build</a>
+      <a href="/build-on-your-land.html">Build on Land You Own</a>
+    </div>
+    <a href="/about.html">About</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Let's Talk</a>
+  </div>
+  <main>
+    <div class="coming-soon">
+      <div class="coming-soon-inner">
+        <p class="cs-label">Buy Land &amp; Build</p>
+        <h1 class="cs-heading">This Page Is <em>Coming Soon.</em></h1>
+        <p class="cs-body">We're putting together everything you need to know about finding land and building your home on it from the ground up. In the meantime, reach out and Toni will walk you through the process directly.</p>
+        <a href="/contact.html" class="btn-forest">Talk to Toni</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    const t=document.getElementById('navToggle'),m=document.getElementById('mobileNav'),c=document.getElementById('mobileNavClose');
+    t.addEventListener('click',()=>{m.classList.add('open');t.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
+    c.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded','false');document.body.style.overflow='';});
+    m.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{m.classList.remove('open');document.body.style.overflow='';}));
+  </script>
+</body>
+</html>

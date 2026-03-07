@@ -62,6 +62,16 @@
     .mobile-nav a { font-family: var(--font-display); font-size: 2.2rem; color: var(--white); transition: color var(--ease); }
     .mobile-nav a:hover { color: var(--mist); }
     .mobile-nav-close { position: absolute; top: 1.5rem; right: 1.5rem; color: var(--white); font-size: 1.5rem; background: none; border: none; cursor: pointer; }
+    .mobile-nav-section { font-family: var(--font-display); font-size: 2.2rem; color: var(--white); }
+    .mobile-nav-sub { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+    .mobile-nav-sub a { font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); transition: color var(--ease); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-arrow { font-size: 0.58rem; opacity: 0.55; margin-left: 2px; }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 0.85rem); left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--linen); border-radius: 4px; box-shadow: 0 8px 28px rgba(30,46,34,0.13); min-width: 210px; padding: 0.5rem 0; z-index: 200; list-style: none; }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a { display: block; padding: 0.65rem 1.25rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--deep); transition: color var(--ease), background var(--ease); white-space: nowrap; }
+    .nav-dropdown-menu li a::after { display: none; }
+    .nav-dropdown-menu li a:hover { background: var(--linen); color: var(--forest); }
 
     /* HERO */
     .hero { min-height: 100vh; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
@@ -231,7 +241,14 @@
     <ul class="nav-links" role="list">
       <li><a href="/buy.html">Buy</a></li>
       <li><a href="/sell.html">Sell</a></li>
-      <li><a href="/build.html">Build</a></li>
+      <li class="nav-dropdown">
+        <a href="/build.html">Build <span class="nav-dropdown-arrow" aria-hidden="true">&#9660;</span></a>
+        <ul class="nav-dropdown-menu" role="list">
+          <li><a href="/buy-land.html">Buy Land</a></li>
+          <li><a href="/buy-land-and-build.html">Buy Land &amp; Build</a></li>
+          <li><a href="/build-on-your-land.html">Build on Land You Own</a></li>
+        </ul>
+      </li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/blog.html">Blog</a></li>
     </ul>
@@ -245,7 +262,12 @@
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#x2715;</button>
     <a href="/buy.html">Buy</a>
     <a href="/sell.html">Sell</a>
-    <a href="/build.html">Build</a>
+    <span class="mobile-nav-section">Build</span>
+    <div class="mobile-nav-sub">
+      <a href="/buy-land.html">Buy Land</a>
+      <a href="/buy-land-and-build.html">Buy Land &amp; Build</a>
+      <a href="/build-on-your-land.html">Build on Land You Own</a>
+    </div>
     <a href="/about.html">About</a>
     <a href="/blog.html">Blog</a>
     <a href="/contact.html">Let's Talk</a>
