@@ -4,10 +4,10 @@
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>Sell Your Home in Central Kentucky | Life Built in Kentucky</title>
- <meta name="description" content="Sell your Central Kentucky home with Toni Schafer, Realtor and General Contractor. Get a free home valuation, honest pre-listing advice, and a selling strategy built around your goals." />
- <meta name="keywords" content="sell home Central Kentucky, Central Kentucky listing agent, home valuation Central Kentucky, Garrard County sell home, Boyle County real estate, Toni Schafer listing agent, sell house Kentucky" />
+ <meta name="description" content="Sell your Central Kentucky home or farm with Toni Schafer, Realtor and General Contractor. Strategic marketing, honest pricing, and an agent who understands what you're letting go of." />
+ <meta name="keywords" content="sell home Central Kentucky, sell farm Kentucky, Central Kentucky listing agent, home valuation Central Kentucky, Garrard County sell home, Boyle County real estate, Toni Schafer listing agent, selling farmer tax credit Kentucky" />
  <meta property="og:title" content="Sell Your Home in Central Kentucky | Life Built in Kentucky" />
- <meta property="og:description" content="A listing agent who sees your home through a contractor's eyes. Know exactly what to fix, what to skip, and how to price it right." />
+ <meta property="og:description" content="Selling deserves more than a For Sale sign. Toni Schafer understands what you've built and works to get it into the right hands." />
  <meta property="og:type" content="website" />
  <link rel="canonical" href="https://www.lifebuiltinkentucky.com/sell.html" />
 
@@ -51,9 +51,10 @@
  .nav-cta:hover { background: var(--forest); color: var(--white); }
  .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; border: none; background: none; }
  .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--forest); border-radius: 2px; }
- .mobile-nav { display: none; position: fixed; inset: 0; background: var(--ink); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+ .mobile-nav { display: none; position: fixed; inset: 0; background: var(--ink); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; overflow-y: auto; padding: 4rem 2rem; }
  .mobile-nav.open { display: flex; }
- .mobile-nav a { font-family: var(--font-display); font-size: 2rem; color: var(--white); }
+ .mobile-nav > a { font-family: var(--font-display); font-size: 2rem; color: var(--white); transition: color var(--transition); }
+ .mobile-nav > a:hover { color: var(--mist); }
  .mobile-nav-close { position: absolute; top: 1.5rem; right: 1.5rem; color: var(--white); font-size: 1.5rem; cursor: pointer; border: none; background: none; }
  .mobile-nav-section { font-family: var(--font-display); font-size: 2rem; color: var(--white); }
  .mobile-nav-sub { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
@@ -66,98 +67,134 @@
  .nav-dropdown-menu li a::after { display: none; }
  .nav-dropdown-menu li a:hover { background: var(--linen); color: var(--forest); }
 
- /* PAGE HERO */
- .page-hero { padding: 9rem 2.5rem 5rem; background: var(--ink); position: relative; overflow: hidden; }
- .page-hero::before { content: 'SELL'; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22rem; font-weight: 700; color: rgba(254,253,254,0.03); pointer-events: none; line-height: 1; }
- .hero-bg-photo { position: absolute; inset: 0; z-index: 0; }
- .hero-bg-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.18; }
- .page-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
- .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mist); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
- .hero-eyebrow::before { content: ''; display: inline-block; width: 36px; height: 1px; background: var(--mist); }
- .page-hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.0; color: var(--white); letter-spacing: -0.01em; margin-bottom: 1.5rem; }
- .page-hero h1 em { font-style: italic; color: var(--mist); }
- .page-hero-lead { font-size: 1.05rem; line-height: 1.8; color: rgba(254,253,254,0.8); margin-bottom: 2rem; max-width: 480px; }
- .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
- .btn-white { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--white); color: var(--forest); font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; border: 1px solid var(--white); transition: all var(--transition); }
- .btn-white:hover { background: var(--linen); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
- .btn-outline-light { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: transparent; color: var(--white); font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; border: 1px solid rgba(254,253,254,0.45); transition: all var(--transition); }
- .btn-outline-light:hover { background: rgba(254,253,254,0.1); border-color: var(--white); }
-
- /* PHOTO CARD STACK */
- .hero-photo-stack { position: relative; height: 420px; }
- .hero-stack-main { position: absolute; right: 0; top: 0; width: 75%; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); height: 300px; }
- .hero-stack-main img { width: 100%; height: 100%; object-fit: cover; }
- .hero-stack-accent { position: absolute; left: 0; bottom: 0; width: 55%; border-radius: 4px; overflow: hidden; box-shadow: 0 12px 36px rgba(0,0,0,0.4); border: 3px solid rgba(254,253,254,0.1); height: 220px; }
- .hero-stack-accent img { width: 100%; height: 100%; object-fit: cover; }
- .hero-stat { position: absolute; top: 50%; right: -1rem; transform: translateY(-50%); background: var(--forest); color: var(--white); padding: 1.25rem 1.5rem; border-radius: 4px; text-align: center; box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
- .hero-stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 500; color: var(--mist); line-height: 1; }
- .hero-stat-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(254,253,254,0.7); margin-top: 0.3rem; }
-
  /* SHARED */
  .section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
- .section-heading { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1rem; }
+ .section-heading { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
  .section-heading em { font-style: italic; color: var(--forest); }
- .section-intro { font-size: 1.05rem; line-height: 1.8; color: #4a5a4e; max-width: 680px; margin-bottom: 3rem; }
+ .body-text { font-size: 1rem; line-height: 1.85; color: #4a5a4e; margin-bottom: 1.25rem; }
  .btn-forest { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--forest); color: var(--white); font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; border: 1px solid var(--forest); transition: all var(--transition); }
  .btn-forest:hover { background: var(--deep); border-color: var(--deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(51,90,58,0.3); }
  .btn-outline-forest { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: transparent; color: var(--forest); font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; border: 1px solid var(--forest); transition: all var(--transition); }
  .btn-outline-forest:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); }
+ .btn-white { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--white); color: var(--forest); font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; border: 1px solid var(--white); transition: all var(--transition); }
+ .btn-white:hover { background: var(--linen); transform: translateY(-2px); }
+ .btn-outline-light { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: transparent; color: var(--white); font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; border: 1px solid rgba(254,253,254,0.45); transition: all var(--transition); }
+ .btn-outline-light:hover { background: rgba(254,253,254,0.1); border-color: var(--white); }
 
- /* GC ADVANTAGE */
- .gc-advantage { padding: 5rem 2.5rem; background: var(--white); }
- .gc-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
- .gc-photo { border-radius: 4px; overflow: hidden; box-shadow: 0 16px 48px rgba(51,90,58,0.15); }
- .gc-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
- .gc-text .section-heading { margin-bottom: 1.25rem; }
- .gc-body { font-size: 1rem; line-height: 1.85; color: #4a5a4e; margin-bottom: 1.25rem; }
- .gc-list { margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.85rem; }
- .gc-list-item { display: flex; align-items: flex-start; gap: 0.85rem; font-size: 0.95rem; line-height: 1.6; color: #4a5a4e; }
- .gc-list-item::before { content: ''; width: 20px; height: 20px; border-radius: 50%; background: var(--forest); flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+ /* HERO */
+ .page-hero { padding: 9rem 2.5rem 5rem; background: var(--ink); position: relative; overflow: hidden; min-height: 70vh; display: flex; align-items: center; }
+ .hero-bg-photo { position: absolute; inset: 0; z-index: 0; }
+ .hero-bg-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; opacity: 0.22; }
+ .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,46,34,0.85) 0%, rgba(30,46,34,0.5) 100%); z-index: 1; }
+ .page-hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 2; }
+ .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mist); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+ .hero-eyebrow::before { content: ''; display: inline-block; width: 36px; height: 1px; background: var(--mist); }
+ .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.05; color: var(--white); letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+ .page-hero h1 em { font-style: italic; color: var(--mist); }
+ .page-hero-lead { font-size: 1.1rem; line-height: 1.8; color: rgba(254,253,254,0.82); margin-bottom: 2.5rem; max-width: 620px; }
+ .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
- /* VALUATION STRIP */
- .valuation-strip { background: var(--forest); padding: 5rem 2.5rem; position: relative; overflow: hidden; }
- .valuation-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(143,175,154,0.15) 0%, transparent 65%); pointer-events: none; }
- .valuation-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
- .valuation-text .section-label { color: var(--mist); }
- .valuation-text .section-heading { color: var(--white); }
- .valuation-body { font-size: 1rem; line-height: 1.8; color: rgba(254,253,254,0.78); margin-bottom: 1.5rem; }
- .valuation-perks { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
- .valuation-perk { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: rgba(254,253,254,0.75); }
- .perk-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mist); flex-shrink: 0; }
+ /* NARRATIVE */
+ .narrative { padding: 5rem 2.5rem; background: var(--white); }
+ .narrative-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
+ .narrative-photo { border-radius: 4px; overflow: hidden; box-shadow: 0 16px 48px rgba(51,90,58,0.15); }
+ .narrative-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; }
+ .narrative-quote { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 300; font-style: italic; color: var(--forest); line-height: 1.3; margin-bottom: 2rem; border-left: 2px solid var(--mist); padding-left: 1.5rem; }
 
- /* GHL FORM */
- .form-wrap { background: var(--white); border-radius: 6px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
- .form-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; color: var(--forest); margin-bottom: 0.4rem; }
- .form-sub { font-size: 0.85rem; color: #888; margin-bottom: 2rem; }
- .ghl-placeholder { background: var(--linen); border: 2px dashed var(--mist); border-radius: 4px; padding: 2.5rem; text-align: center; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; }
- .ghl-placeholder h4 { font-family: var(--font-display); font-size: 1.2rem; color: var(--forest); font-weight: 400; }
- .ghl-placeholder p { font-size: 0.82rem; color: #888; line-height: 1.6; max-width: 300px; }
- .ghl-placeholder code { font-size: 0.75rem; color: var(--forest); background: rgba(51,90,58,0.08); padding: 0.5rem 1rem; border-radius: 3px; font-family: monospace; }
+ /* RIGHT BUYER */
+ .right-buyer { padding: 5rem 2.5rem; background: var(--linen); }
+ .right-buyer-inner { max-width: 900px; margin: 0 auto; }
+ .concern-list { margin: 2rem 0; display: flex; flex-direction: column; gap: 1rem; }
+ .concern-item { display: flex; align-items: flex-start; gap: 1rem; font-size: 1rem; line-height: 1.7; color: #4a5a4e; }
+ .concern-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; margin-top: 0.6rem; }
+ .closing-note { font-size: 1.05rem; line-height: 1.8; color: var(--ink); font-weight: 400; margin-top: 2rem; padding: 1.5rem 2rem; background: rgba(255,255,255,0.6); border-left: 3px solid var(--forest); border-radius: 0 4px 4px 0; }
+
+ /* YOUR STORY */
+ .your-story { padding: 5rem 2.5rem; background: var(--white); }
+ .your-story-inner { max-width: 1100px; margin: 0 auto; }
+ .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2.5rem 0; }
+ .story-card { background: var(--linen); border-radius: 4px; padding: 1.75rem; }
+ .story-card-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; color: var(--forest); margin-bottom: 0.6rem; }
+ .story-card-text { font-size: 0.95rem; line-height: 1.75; color: #4a5a4e; }
+
+ /* MARKETING */
+ .marketing { padding: 5rem 2.5rem; background: var(--ink); }
+ .marketing-inner { max-width: 1200px; margin: 0 auto; }
+ .marketing-inner .section-label { color: var(--mist); }
+ .marketing-inner .section-heading { color: var(--white); }
+ .marketing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+ .marketing-card { background: rgba(254,253,254,0.05); border: 1px solid rgba(254,253,254,0.1); border-radius: 4px; padding: 2rem; }
+ .marketing-card-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mist); margin-bottom: 0.75rem; }
+ .marketing-card-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; color: var(--white); margin-bottom: 0.75rem; }
+ .marketing-card-text { font-size: 0.92rem; line-height: 1.75; color: rgba(254,253,254,0.68); }
+
+ /* EQUITY */
+ .equity { padding: 5rem 2.5rem; background: var(--white); }
+ .equity-inner { max-width: 1100px; margin: 0 auto; }
+ .equity-items { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0; }
+ .equity-item { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; align-items: start; padding: 2rem 0; border-bottom: 1px solid var(--linen); }
+ .equity-item:last-child { border-bottom: none; }
+ .equity-item-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--forest); padding-top: 0.2rem; }
+ .equity-item-text { font-size: 0.97rem; line-height: 1.8; color: #4a5a4e; }
+
+ /* FARMER CREDIT */
+ .farmer-credit { padding: 5rem 2.5rem; background: var(--forest); position: relative; overflow: hidden; }
+ .farmer-credit::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(143,175,154,0.15) 0%, transparent 65%); pointer-events: none; }
+ .farmer-credit-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+ .farmer-credit .section-label { color: var(--mist); }
+ .farmer-credit .section-heading { color: var(--white); }
+ .farmer-credit .body-text { color: rgba(254,253,254,0.8); }
+ .credit-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist); border-bottom: 1px solid rgba(143,175,154,0.4); padding-bottom: 3px; transition: color var(--transition), border-color var(--transition); }
+ .credit-link:hover { color: var(--white); border-color: rgba(254,253,254,0.5); }
+
+ /* EMOTIONAL */
+ .emotional { padding: 5rem 2.5rem; background: var(--linen); }
+ .emotional-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+ .emotional .section-heading { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
+ .emotional .body-text { font-size: 1.05rem; text-align: left; }
+ .pull-quote { font-family: var(--font-display); font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-style: italic; color: var(--forest); line-height: 1.4; margin: 2.5rem 0; text-align: center; }
 
  /* PROCESS */
- .process { padding: 5rem 2.5rem; background: var(--linen); }
- .process-inner { max-width: 1200px; margin: 0 auto; }
- .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin-top: 3rem; }
- .steps::before { content: ''; position: absolute; top: 1.35rem; left: 1.5rem; right: 1.5rem; height: 1px; background: var(--mist); opacity: 0.5; }
- .step { position: relative; z-index: 1; padding-right: 1rem; }
+ .process { padding: 5rem 2.5rem; background: var(--white); }
+ .process-inner { max-width: 1100px; margin: 0 auto; }
+ .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+ .step { position: relative; padding: 0; }
  .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--forest); color: var(--white); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; margin-bottom: 1.25rem; }
- .step-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
- .step-text { font-size: 0.85rem; line-height: 1.7; color: #666; }
+ .step-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+ .step-text { font-size: 0.88rem; line-height: 1.75; color: #666; }
 
- /* TONI SPLIT */
- .toni-split { padding: 5rem 2.5rem; background: var(--white); }
- .toni-split-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
- .toni-photo { border-radius: 4px; overflow: hidden; box-shadow: 0 16px 48px rgba(51,90,58,0.15); }
- .toni-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; }
- .toni-text .section-heading { margin-bottom: 1.25rem; }
- .toni-body { font-size: 1rem; line-height: 1.85; color: #4a5a4e; margin-bottom: 1.25rem; }
- .toni-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+ /* CTA STRIP */
+ .cta-strip { padding: 5rem 2.5rem; background: var(--ink); text-align: center; position: relative; overflow: hidden; }
+ .cta-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(51,90,58,0.4) 0%, transparent 70%); pointer-events: none; }
+ .cta-strip-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+ .cta-strip .section-heading { color: var(--white); font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1.25rem; }
+ .cta-strip .body-text { color: rgba(254,253,254,0.78); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+ .cta-strip-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+ .ghl-form-placeholder { background: rgba(254,253,254,0.05); border: 1px dashed rgba(143,175,154,0.4); border-radius: 4px; padding: 2.5rem; margin-top: 2rem; text-align: center; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+ .ghl-form-placeholder p { font-size: 0.82rem; color: rgba(254,253,254,0.4); }
+ .ghl-form-placeholder code { font-size: 0.75rem; color: var(--mist); font-family: monospace; }
+
+ /* SECONDARY ACTIONS */
+ .secondary { padding: 4rem 2.5rem; background: var(--linen); }
+ .secondary-inner { max-width: 1000px; margin: 0 auto; }
+ .secondary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2rem; }
+ .secondary-card { background: var(--white); border-radius: 4px; padding: 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+ .secondary-card-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--forest); }
+ .secondary-card-text { font-size: 0.88rem; line-height: 1.7; color: #4a5a4e; flex: 1; }
+ .secondary-card-link { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); border-bottom: 1px solid var(--mist); padding-bottom: 2px; align-self: flex-start; margin-top: 0.5rem; transition: color var(--transition); }
+ .secondary-card-link:hover { color: var(--deep); }
+
+ /* TESTIMONIALS */
+ .testimonials { padding: 5rem 2.5rem; background: var(--white); }
+ .testimonials-inner { max-width: 1000px; margin: 0 auto; }
+ .testimonials-placeholder { background: var(--linen); border-radius: 4px; padding: 3rem; text-align: center; margin-top: 2.5rem; }
+ .testimonials-placeholder p { font-size: 0.9rem; color: #666; line-height: 1.8; max-width: 560px; margin: 0 auto; }
 
  /* FOOTER */
  footer { background: var(--ink); color: rgba(254,253,254,0.75); padding: 4rem 2.5rem 2rem; }
  .footer-inner { max-width: 1200px; margin: 0 auto; }
  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(254,253,254,0.1); margin-bottom: 2rem; }
- .footer-logo-img { width: 160px; height: auto; margin-bottom: 0.75rem;  }
+ .footer-logo-img { width: 160px; height: auto; margin-bottom: 0.75rem; }
  .footer-tagline { font-size: 0.78rem; color: var(--mist); font-style: italic; letter-spacing: 0.08em; margin-bottom: 1.25rem; }
  .footer-contact-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; margin-bottom: 0.5rem; color: rgba(254,253,254,0.7); }
  .footer-contact-item a:hover { color: var(--mist); }
@@ -184,23 +221,24 @@
 
  /* RESPONSIVE */
  @media (max-width: 1024px) {
- .page-hero-inner, .gc-inner, .valuation-inner, .toni-split-inner { grid-template-columns: 1fr; gap: 3rem; }
- .steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
- .steps::before { display: none; }
- .footer-top { grid-template-columns: 1fr 1fr; }
- .hero-photo-stack { height: 320px; }
- .hero-stack-main { height: 240px; }
- .hero-stack-accent { height: 180px; }
+   .narrative-inner { grid-template-columns: 1fr; gap: 3rem; }
+   .narrative-photo { max-width: 480px; }
+   .story-grid { grid-template-columns: 1fr; }
+   .marketing-grid { grid-template-columns: 1fr; }
+   .equity-item { grid-template-columns: 1fr; gap: 0.5rem; }
+   .steps { grid-template-columns: 1fr 1fr; }
+   .secondary-grid { grid-template-columns: 1fr 1fr; }
+   .footer-top { grid-template-columns: 1fr 1fr; }
  }
  @media (max-width: 768px) {
- .nav { padding: 1rem 1.5rem; }
- .nav-links, .nav-cta { display: none; }
- .nav-toggle { display: flex; }
- .page-hero { padding: 7rem 1.5rem 4rem; }
- .gc-advantage, .valuation-strip, .process, .toni-split { padding: 3.5rem 1.5rem; }
- .steps { grid-template-columns: 1fr; }
- .hero-photo-stack { display: none; }
- .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+   .nav { padding: 1rem 1.5rem; }
+   .nav-links, .nav-cta { display: none; }
+   .nav-toggle { display: flex; }
+   .page-hero { padding: 7rem 1.5rem 4rem; }
+   .narrative, .right-buyer, .your-story, .marketing, .equity, .farmer-credit, .emotional, .process, .cta-strip, .secondary, .testimonials { padding: 3.5rem 1.5rem; }
+   .steps { grid-template-columns: 1fr; }
+   .secondary-grid { grid-template-columns: 1fr; }
+   .footer-top { grid-template-columns: 1fr; gap: 2rem; }
  }
  </style>
 </head>
@@ -249,175 +287,294 @@
 
  <main id="main-content">
 
- <!-- Hero -->
+ <!-- HERO -->
  <header class="page-hero" aria-labelledby="sell-heading">
- <div class="hero-bg-photo" aria-hidden="true">
- <img src="/images/Snapchat-1373346444.jpg" alt="" loading="eager" />
- </div>
- <div class="page-hero-inner">
- <div>
- <p class="hero-eyebrow">Sell in Central Kentucky</p>
- <h1 id="sell-heading">
- Sell Smarter.<br>
- <em>Walk Away Confident.</em>
- </h1>
- <p class="page-hero-lead">
- Most sellers guess at what to fix before listing. Toni walks your home as a General Contractor first and a Realtor second, so you spend money only where it matters and price with confidence.
- </p>
- <div class="hero-actions">
- <a href="#home-valuation" class="btn-white" aria-label="Request a free home valuation from Toni Schafer">Get Your Home's Value</a>
- <a href="#selling-process" class="btn-outline-light" aria-label="Learn about the selling process">How It Works</a>
- </div>
- </div>
- <div class="hero-photo-stack" aria-hidden="true">
- <div class="hero-stack-main">
- <img src="/images/Resized_Resized_20231027_174328.jpeg" alt="Beautifully renovated home entry showing the quality of work done by Life Built in Kentucky" />
- </div>
- <div class="hero-stack-accent">
- <img src="/images/20240302_100334.jpg" alt="Fully renovated kitchen with beadboard ceiling and open concept layout" />
- </div>
- <div class="hero-stat" aria-label="Serving all of Central Kentucky">
- <p class="hero-stat-value">Central</p>
- <p class="hero-stat-label">Kentucky</p>
- </div>
- </div>
- </div>
+   <div class="hero-bg-photo" aria-hidden="true">
+     <img src="/images/Snapchat-1373346444.jpg" alt="" loading="eager" />
+   </div>
+   <div class="hero-overlay" aria-hidden="true"></div>
+   <div class="page-hero-inner">
+     <p class="hero-eyebrow">Sell in Central Kentucky</p>
+     <h1 id="sell-heading">
+       Selling Your Home Deserves More Than<br>
+       <em>a "For Sale" Sign.</em>
+     </h1>
+     <p class="page-hero-lead">
+       Whether you're selling a family home, a farm, or generations of memories built into Kentucky land, you deserve an agent who understands what you're letting go of. And who works to get your home into the right hands.
+     </p>
+     <div class="hero-actions">
+       <a href="#cta" class="btn-white">Schedule a Consultation</a>
+       <a href="#process" class="btn-outline-light">How It Works</a>
+     </div>
+   </div>
  </header>
 
- <!-- GC Advantage for Sellers -->
- <section class="gc-advantage" aria-labelledby="gc-heading">
- <div class="gc-inner">
- <div class="gc-photo reveal">
- <img src="/images/20231120_071848.jpg"
- alt="Completed exterior renovation showcasing the full transformation Toni Schafer delivers as both Realtor and General Contractor"
- loading="lazy" />
- </div>
- <div class="gc-text reveal reveal-delay-1">
- <p class="section-label">The Seller Advantage</p>
- <h2 class="section-heading" id="gc-heading">
- Know What to Fix.<br>
- <em>Before You List.</em>
- </h2>
- <p class="gc-body">
- Most sellers spend money on the wrong things before listing. They repaint walls that buyers will repaint anyway and skip the structural issues that actually kill deals at inspection. Toni walks your home as a contractor before she ever thinks about listing price.
- </p>
- <p class="gc-body">
- That walk-through tells you exactly what will come up at inspection, what a buyer will use to negotiate against you, and what a small investment now could add to your final number.
- </p>
- <ul class="gc-list" aria-label="What Toni evaluates before listing your home">
- <li class="gc-list-item">What repairs will actually move the needle on price</li>
- <li class="gc-list-item">What inspectors will flag and how to get ahead of it</li>
- <li class="gc-list-item">What buyers in this market care about most</li>
- <li class="gc-list-item">Where cosmetic improvements deliver the best return</li>
- <li class="gc-list-item">How to price your home so it attracts serious offers fast</li>
- </ul>
- </div>
- </div>
+ <!-- OPENING NARRATIVE -->
+ <section class="narrative" aria-labelledby="narrative-heading">
+   <div class="narrative-inner">
+     <div class="narrative-photo reveal">
+       <img src="/images/Family.png" alt="Toni Schafer with her family on their Central Kentucky farm" loading="lazy" />
+     </div>
+     <div class="reveal reveal-delay-1">
+       <p class="section-label">From Someone Who Gets It</p>
+       <h2 class="section-heading" id="narrative-heading">I Know What It Means to <em>Build a Life on Land.</em></h2>
+       <blockquote class="narrative-quote">
+         "I grew up on a farm. Today, I'm raising my four kids on 50 acres here in central Kentucky, living with three generations under one roof."
+       </blockquote>
+       <p class="body-text">I know what it means to build a life on land. And I know what it feels like to let go of it.</p>
+       <p class="body-text">Selling a home, whether it has 100 acres or a quarter acre, isn't just a real estate transaction. It's a transition. It's trusting someone else with the space where your family grew, where you invested your time and resources, where your memories live.</p>
+       <p class="body-text">That matters. And I don't take that lightly.</p>
+     </div>
+   </div>
  </section>
 
- <!-- Free Valuation Lead Capture -->
- <section class="valuation-strip" id="home-valuation" aria-labelledby="valuation-heading">
- <div class="valuation-inner">
- <div class="valuation-text reveal">
- <p class="section-label">Free and No Obligation</p>
- <h2 class="section-heading" id="valuation-heading" style="color:var(--white);">
- What Is Your<br>
- <em style="color:var(--mist);">Home Worth?</em>
- </h2>
- <p class="valuation-body">
- Central Kentucky home values vary widely by county, condition, and what the market is doing right now. A Zestimate is not a strategy. Toni gives you a real comparative market analysis based on actual recent sales in your area, plus an honest assessment of where your home stands today.
- </p>
- <p class="valuation-body">
- No cost. No commitment. Just real numbers you can make a decision with.
- </p>
- <ul class="valuation-perks" aria-label="What is included in your free home valuation">
- <li class="valuation-perk"><span class="perk-dot" aria-hidden="true"></span>Comparative market analysis based on real local sales</li>
- <li class="valuation-perk"><span class="perk-dot" aria-hidden="true"></span>Pre-listing walk-through with contractor perspective</li>
- <li class="valuation-perk"><span class="perk-dot" aria-hidden="true"></span>Honest pricing recommendation, not just a high number to win your listing</li>
- <li class="valuation-perk"><span class="perk-dot" aria-hidden="true"></span>No pressure, no obligation</li>
- </ul>
- </div>
- <div class="form-wrap reveal reveal-delay-1">
- <h3 class="form-title">Request Your Free Valuation</h3>
- <p class="form-sub">Tell us a little about your home and Toni will be in touch within one business day.</p>
-
- <!-- GHL SELLER VALUATION FORM EMBED -->
- <!-- Replace the placeholder below with your Go High Level seller valuation form embed code -->
- <div class="ghl-placeholder" role="form" aria-label="Home valuation request form">
- <span style="font-size:2rem;" aria-hidden="true">🏠</span>
- <h4>Home Valuation Form</h4>
- <p>Your Go High Level seller valuation form will be embedded here. See the GHL setup guide for step-by-step VA instructions.</p>
- <code>&lt;!-- GHL Seller Valuation Form Embed Code --&gt;</code>
- </div>
- <!-- END GHL FORM PLACEHOLDER -->
-
- </div>
- </div>
+ <!-- SECTION 1: THE RIGHT BUYER -->
+ <section class="right-buyer" aria-labelledby="right-buyer-heading">
+   <div class="right-buyer-inner">
+     <div class="reveal">
+       <p class="section-label">The Real Problem</p>
+       <h2 class="section-heading" id="right-buyer-heading">It's Not About Getting <em>ANY</em> Buyer. It's About Getting the <em>RIGHT</em> Buyer.</h2>
+     </div>
+     <div class="reveal reveal-delay-1">
+       <p class="body-text">You've built something here. Maybe it's a family farm passed down through generations. Maybe it's a home where you raised your kids. Maybe it's a property where you've invested years of work and countless decisions to make it what it is today.</p>
+       <p class="body-text">So when you're ready to sell, the last thing you want is:</p>
+       <ul class="concern-list" aria-label="What sellers don't want">
+         <li class="concern-item"><span class="concern-dot" aria-hidden="true"></span>An agent who treats your home like a number on their listing sheet</li>
+         <li class="concern-item"><span class="concern-dot" aria-hidden="true"></span>A buyer who doesn't understand the value of what they're getting</li>
+         <li class="concern-item"><span class="concern-dot" aria-hidden="true"></span>A process that feels rushed, impersonal, or driven by someone else's timeline</li>
+         <li class="concern-item"><span class="concern-dot" aria-hidden="true"></span>Worrying that you're leaving money on the table or that your home will go to someone who won't care for it the way you have</li>
+       </ul>
+       <div class="closing-note">
+         <p>The truth is, not every buyer is the right buyer for every home. Your job isn't to sell to just anybody. Your job is to sell to someone who actually fits. Someone who understands what they're getting. Someone who will build on what you've created, not tear it down.</p>
+       </div>
+     </div>
+   </div>
  </section>
 
- <!-- Selling Process -->
- <section class="process" id="selling-process" aria-labelledby="process-heading">
- <div class="process-inner">
- <div class="reveal">
- <p class="section-label">How It Works</p>
- <h2 class="section-heading" id="process-heading">The Selling <em>Process</em></h2>
- </div>
- <ol class="steps" role="list" aria-label="Home selling process steps">
- <li class="step reveal">
- <div class="step-num" aria-hidden="true">1</div>
- <h3 class="step-title">Free Valuation</h3>
- <p class="step-text">Toni reviews your home, runs a real market analysis, and gives you an honest number along with a pre-listing walk-through from a contractor's perspective.</p>
- </li>
- <li class="step reveal reveal-delay-1">
- <div class="step-num" aria-hidden="true">2</div>
- <h3 class="step-title">Prep Strategy</h3>
- <p class="step-text">We build a targeted prep list. Only the improvements that move the needle. No wasted spending on things buyers will not care about.</p>
- </li>
- <li class="step reveal reveal-delay-2">
- <div class="step-num" aria-hidden="true">3</div>
- <h3 class="step-title">List and Market</h3>
- <p class="step-text">Professional photography, MLS listing, and targeted marketing to reach serious buyers in Central Kentucky and beyond.</p>
- </li>
- <li class="step reveal reveal-delay-3">
- <div class="step-num" aria-hidden="true">4</div>
- <h3 class="step-title">Negotiate</h3>
- <p class="step-text">When offers come in, Toni negotiates hard on your behalf. Her construction knowledge means inspection responses are grounded in real costs, not guesses.</p>
- </li>
- <li class="step reveal reveal-delay-4">
- <div class="step-num" aria-hidden="true">5</div>
- <h3 class="step-title">Close Strong</h3>
- <p class="step-text">We guide you through every step to closing day so nothing falls through the cracks. You walk away knowing exactly what happened and why.</p>
- </li>
- </ol>
- </div>
+ <!-- SECTION 2: YOUR STORY -->
+ <section class="your-story" aria-labelledby="your-story-heading">
+   <div class="your-story-inner">
+     <div class="reveal">
+       <p class="section-label">How This Works</p>
+       <h2 class="section-heading" id="your-story-heading">Let's Start By <em>Understanding Your Story.</em></h2>
+       <p class="body-text">When you list with me, we start with a conversation. Not a listing presentation. I want to understand:</p>
+     </div>
+     <div class="story-grid reveal reveal-delay-1">
+       <div class="story-card">
+         <p class="story-card-title">Your Story</p>
+         <p class="story-card-text">What have you built here? What does this property mean to you? What are the memories, the work, the investments that make it valuable?</p>
+       </div>
+       <div class="story-card">
+         <p class="story-card-title">Your Timeline</p>
+         <p class="story-card-text">When do you actually want to move? What's your best-case scenario for timing? This shapes everything about how we market and who we target.</p>
+       </div>
+       <div class="story-card">
+         <p class="story-card-title">Your Next Chapter</p>
+         <p class="story-card-text">Where are you going? What are you excited about in what's next? Focusing on what's ahead is usually more empowering than dwelling on what you're leaving behind.</p>
+       </div>
+       <div class="story-card">
+         <p class="story-card-title">Your Ideal Buyer</p>
+         <p class="story-card-text">We talk about who would actually be the right fit for your home. Not just "someone with money," but someone who will appreciate it, understand its value, and care for it well.</p>
+       </div>
+     </div>
+     <p class="body-text reveal reveal-delay-2">Once I understand all of that, I can market your home in the right places, to the right people, in ways that actually work.</p>
+   </div>
  </section>
 
- <!-- Toni CTA -->
- <section class="toni-split" aria-labelledby="toni-sell-heading">
- <div class="toni-split-inner">
- <div class="toni-photo reveal">
- <img src="/images/Family.png"
- alt="Toni Schafer, Realtor and General Contractor, at home in Central Kentucky"
- loading="lazy" />
- </div>
- <div class="toni-text reveal reveal-delay-1">
- <p class="section-label">Your Listing Agent</p>
- <h2 class="section-heading" id="toni-sell-heading">
- A Seller's Agent Who<br>
- <em>Knows the Build.</em>
- </h2>
- <p class="toni-body">
- Toni Schafer is a Realtor and General Contractor serving Central Kentucky. When you list with Toni, you get more than someone who puts a sign in the yard. You get someone who can walk your home before it hits the market and tell you exactly what buyers will see, what inspectors will flag, and where a small investment will make a real difference.
- </p>
- <p class="toni-body">
- That combination protects your net. It means fewer surprises at inspection, stronger negotiations, and a smoother path to the closing table.
- </p>
- <div class="toni-btns">
- <a href="#home-valuation" class="btn-forest" aria-label="Schedule a free listing consultation with Toni">Schedule a Consultation</a>
- <a href="tel:8596124044" class="btn-outline-forest" aria-label="Call Toni at 859-612-4044">Call 859-612-4044</a>
- </div>
- </div>
- </div>
+ <!-- SECTION 3: MARKETING -->
+ <section class="marketing" aria-labelledby="marketing-heading">
+   <div class="marketing-inner">
+     <div class="reveal">
+       <p class="section-label">Visibility and Reach</p>
+       <h2 class="section-heading" id="marketing-heading">Your Home Gets in Front of <em>the Right People.</em></h2>
+       <p class="body-text" style="color:rgba(254,253,254,0.72);">I don't just list your home and hope someone finds it. I actively market it to people who are actually looking for what you have.</p>
+     </div>
+     <div class="marketing-grid">
+       <div class="marketing-card reveal">
+         <p class="marketing-card-label">Social Media</p>
+         <h3 class="marketing-card-title">A Large, Engaged Following</h3>
+         <p class="marketing-card-text">I have a large, engaged following across social media, including people from across Kentucky and out of state who are relocating here specifically looking for the right property. Your home gets visibility to buyers who are actively searching.</p>
+       </div>
+       <div class="marketing-card reveal reveal-delay-1">
+         <p class="marketing-card-label">Placement</p>
+         <h3 class="marketing-card-title">Strategic, Not Scattered</h3>
+         <p class="marketing-card-text">For farms, I use drone footage and marketing in local publications and magazines that reach serious land buyers. For homes, I make sure your listing appears in the places where your ideal buyer is actually looking.</p>
+       </div>
+       <div class="marketing-card reveal reveal-delay-2">
+         <p class="marketing-card-label">Targeting</p>
+         <h3 class="marketing-card-title">Built Around Your Buyer</h3>
+         <p class="marketing-card-text">I talk through who I think would be the right fit for your home and how we can market in the specific places where those buyers will see it. This isn't spray-and-pray marketing. It's strategic.</p>
+       </div>
+       <div class="marketing-card reveal reveal-delay-3">
+         <p class="marketing-card-label">Showings</p>
+         <h3 class="marketing-card-title">Serious, Qualified Buyers Only</h3>
+         <p class="marketing-card-text">Every buyer who looks at your home has either a licensed agent showing them or they've had a pre-approval conversation with me. I'm not showing your home to tire-kickers. I'm showing it to serious, qualified buyers who understand what they're looking at.</p>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- SECTION 4: EQUITY -->
+ <section class="equity" aria-labelledby="equity-heading">
+   <div class="equity-inner">
+     <div class="reveal">
+       <p class="section-label">Expert Guidance</p>
+       <h2 class="section-heading" id="equity-heading">Protecting the Equity <em>You've Built.</em></h2>
+       <p class="body-text">You've invested in this property. Maybe it's financial investment. Maybe it's sweat equity. Maybe it's both. You deserve to walk away with what it's actually worth. Here's what I do:</p>
+     </div>
+     <div class="equity-items reveal reveal-delay-1">
+       <div class="equity-item">
+         <p class="equity-item-title">Honest Assessment</p>
+         <p class="equity-item-text">I walk your property thoroughly. For farms, I assess the plat, history, and infrastructure. For homes, I identify what's working and what might be holding back value. Then I tell you straight what I see.</p>
+       </div>
+       <div class="equity-item">
+         <p class="equity-item-title">Strategic Improvements</p>
+         <p class="equity-item-text">Sometimes small, strategic updates make a big impact on your sale price. I identify those opportunities and walk you through the investment vs. return.</p>
+       </div>
+       <div class="equity-item">
+         <p class="equity-item-title">Realistic Pricing</p>
+         <p class="equity-item-text">I provide a thorough CMA (Comparative Market Analysis) based on recent sales, market conditions, and your property's actual features. No inflated estimates designed to win the listing. Just honest numbers based on what homes like yours are actually selling for in your market.</p>
+       </div>
+       <div class="equity-item">
+         <p class="equity-item-title">Serious Attention</p>
+         <p class="equity-item-text">Because I market strategically and buyers come pre-qualified and informed, your home gets serious attention from serious buyers. That drives better offers and faster closings.</p>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- SECTION 5: FARMER TAX CREDIT -->
+ <section class="farmer-credit" aria-labelledby="farmer-credit-heading">
+   <div class="farmer-credit-inner">
+     <div class="reveal">
+       <p class="section-label">For Farmers Selling to Beginning Farmers</p>
+       <h2 class="section-heading" id="farmer-credit-heading">Selling Your Farm to the <em>Next Generation?</em> There's Help for That.</h2>
+       <p class="body-text">If you're a farmer thinking about transitioning your land to someone who will continue farming it, Kentucky wants to help.</p>
+       <p class="body-text">The Selling Farmer Tax Credit is a program that gives tax incentives to experienced farmers who sell their land to a beginning farmer. The goal is clear: keep farmland in farming hands instead of losing it to development.</p>
+       <p class="body-text">This is a real benefit available to you if you're making that transition, and it's something I understand deeply. Letting go of land your family may have farmed for generations, trusting it to the right person, is about more than price. It's about legacy.</p>
+       <a href="https://www.kyagr.com/marketing/beginning-farmer.html" target="_blank" rel="noopener noreferrer" class="credit-link">
+         Learn About the Kentucky Selling Farmer Tax Credit &#8594;
+       </a>
+     </div>
+   </div>
+ </section>
+
+ <!-- SECTION 6: EMOTIONAL -->
+ <section class="emotional" aria-labelledby="emotional-heading">
+   <div class="emotional-inner">
+     <div class="reveal">
+       <p class="section-label" style="text-align:center;">Why It Matters</p>
+       <h2 class="section-heading" id="emotional-heading">This Is More Than <em>a Transaction.</em></h2>
+       <p class="body-text">Selling a home is often one of life's bigger transitions. You're letting go of a chapter. And that can bring up a lot of feelings.</p>
+       <p class="body-text">I get that. I listen to your story and understand what this space has meant to you. And then we focus on what's ahead. The next adventure, the next place, the next chapter of your life.</p>
+       <p class="pull-quote">"You're not losing something. You're moving toward something."</p>
+       <p class="body-text">And the family who buys your home? They get to build their own memories in the space you cared for so well. That's actually a beautiful thing.</p>
+     </div>
+   </div>
+ </section>
+
+ <!-- SECTION 7: PROCESS -->
+ <section class="process" id="process" aria-labelledby="process-heading">
+   <div class="process-inner">
+     <div class="reveal">
+       <p class="section-label">What You Can Expect</p>
+       <h2 class="section-heading" id="process-heading">Here's What <em>Happens.</em></h2>
+     </div>
+     <ol class="steps" role="list" aria-label="Home selling process">
+       <li class="step reveal">
+         <div class="step-num" aria-hidden="true">1</div>
+         <h3 class="step-title">We Start With a Conversation</h3>
+         <p class="step-text">I want to understand your story, your timeline, and what success looks like to you. No pressure. Just honest dialogue.</p>
+       </li>
+       <li class="step reveal reveal-delay-1">
+         <div class="step-num" aria-hidden="true">2</div>
+         <h3 class="step-title">I Evaluate Your Property</h3>
+         <p class="step-text">I walk your land or home thoroughly. I assess what's there, what's working, and what might impact value. Then I provide honest feedback on the good and the realistic.</p>
+       </li>
+       <li class="step reveal reveal-delay-2">
+         <div class="step-num" aria-hidden="true">3</div>
+         <h3 class="step-title">We Set the Right Price</h3>
+         <p class="step-text">Based on comparable sales, market conditions, and your property's actual features, I provide a CMA and a pricing strategy that gets your home in front of the right buyers without leaving money on the table.</p>
+       </li>
+       <li class="step reveal reveal-delay-3">
+         <div class="step-num" aria-hidden="true">4</div>
+         <h3 class="step-title">We Market Strategically</h3>
+         <p class="step-text">Your home gets visibility to serious buyers through social media, targeted placement, and my network. Every showing is with a qualified buyer or their agent.</p>
+       </li>
+       <li class="step reveal reveal-delay-4">
+         <div class="step-num" aria-hidden="true">5</div>
+         <h3 class="step-title">You Review Offers</h3>
+         <p class="step-text">When offers come in, we review them together. I help you understand each one and what it means for your timeline and goals.</p>
+       </li>
+       <li class="step reveal reveal-delay-4">
+         <div class="step-num" aria-hidden="true">6</div>
+         <h3 class="step-title">We Close Well</h3>
+         <p class="step-text">I'm with you through inspections, appraisals, and closing. No surprises. Clear communication every step of the way.</p>
+       </li>
+     </ol>
+   </div>
+ </section>
+
+ <!-- SECTION 8: CTA -->
+ <section class="cta-strip" id="cta" aria-labelledby="cta-heading">
+   <div class="cta-strip-inner">
+     <div class="reveal">
+       <p class="section-label" style="color:var(--mist);">Ready to Talk?</p>
+       <h2 class="section-heading" id="cta-heading">Ready to Talk About <em style="color:var(--mist);">Selling?</em></h2>
+       <p class="body-text">Whether you're just starting to think about selling or you've been planning this for a while, let's have a conversation about what's possible. No obligation. Just honest guidance from someone who understands both the real estate and the life transition side of selling.</p>
+       <div class="cta-strip-btns">
+         <a href="/contact.html" class="btn-white">Schedule a Consultation</a>
+         <a href="tel:8596124044" class="btn-outline-light">Call 859-612-4044</a>
+       </div>
+       <!-- GHL SELLER FORM EMBED -->
+       <!-- Replace the placeholder below with your Go High Level form embed code -->
+       <div class="ghl-form-placeholder" role="form" aria-label="Seller consultation request form">
+         <p>Seller consultation form coming soon.</p>
+         <code>&lt;!-- GHL Seller Form Embed Code --&gt;</code>
+       </div>
+       <!-- END GHL FORM PLACEHOLDER -->
+     </div>
+   </div>
+ </section>
+
+ <!-- SECTION 9: SECONDARY ACTIONS -->
+ <section class="secondary" aria-labelledby="secondary-heading">
+   <div class="secondary-inner">
+     <div class="reveal">
+       <p class="section-label">Want to Explore First?</p>
+       <h2 class="section-heading" id="secondary-heading">More Ways to <em>Get Started.</em></h2>
+     </div>
+     <div class="secondary-grid">
+       <div class="secondary-card reveal">
+         <p class="secondary-card-title">Free Property Evaluation</p>
+         <p class="secondary-card-text">Answer a few questions and get an initial estimate of your home's value. Coming soon. Let us know if you'd like to be notified when it's ready.</p>
+         <a href="/contact.html" class="secondary-card-link">Notify Me When Ready</a>
+       </div>
+       <div class="secondary-card reveal reveal-delay-1">
+         <p class="secondary-card-title">Browse Our Social Media</p>
+         <p class="secondary-card-text">See how I market homes and farms. If our style resonates with you, that's a good sign we'd work well together.</p>
+         <a href="https://www.instagram.com/lifebuiltinky" target="_blank" rel="noopener noreferrer" class="secondary-card-link">View on Instagram</a>
+       </div>
+       <div class="secondary-card reveal reveal-delay-2">
+         <p class="secondary-card-title">Have a Specific Question?</p>
+         <p class="secondary-card-text">Not ready to schedule a full consultation? Reach out with your question and I'll give you a straight answer.</p>
+         <a href="/contact.html" class="secondary-card-link">Contact Toni</a>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- SECTION 10: TESTIMONIALS -->
+ <section class="testimonials" aria-labelledby="testimonials-heading">
+   <div class="testimonials-inner">
+     <div class="reveal">
+       <p class="section-label">Social Proof</p>
+       <h2 class="section-heading" id="testimonials-heading">What Our <em>Sellers Say.</em></h2>
+     </div>
+     <div class="testimonials-placeholder reveal reveal-delay-1">
+       <p>Testimonials from sellers are coming soon. We'll share stories from farmers, homeowners, and people going through different life transitions who trusted Toni to handle one of their most meaningful decisions.</p>
+     </div>
+   </div>
  </section>
 
  </main>
@@ -447,7 +604,6 @@
  <li><a href="/sell.html">Sell</a></li>
  <li><a href="/build.html">Build</a></li>
  <li><a href="/about.html">About</a></li>
- <li><a href="/contact.html">Portfolio</a></li>
  <li><a href="/blog.html">Blog</a></li>
  <li><a href="/contact.html">Contact</a></li>
  </ul>
@@ -467,7 +623,7 @@
  </div>
  </footer>
 
- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+ <script>
  const navToggle = document.getElementById('navToggle');
  const mobileNav = document.getElementById('mobileNav');
  const mobileNavClose = document.getElementById('mobileNavClose');
@@ -476,4 +632,8 @@
  mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { mobileNav.classList.remove('open'); document.body.style.overflow=''; }));
  document.addEventListener('keydown', e => { if (e.key==='Escape' && mobileNav.classList.contains('open')) { mobileNav.classList.remove('open'); document.body.style.overflow=''; } });
  const reveals = document.querySelectorAll('.reveal');
- const obs = new IntersectionObs
+ const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
+ reveals.forEach(r => obs.observe(r));
+ </script>
+</body>
+</html>
