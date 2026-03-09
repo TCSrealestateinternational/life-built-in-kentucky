@@ -4,18 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Build on Land You Own | Life Built in Kentucky</title>
-  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Already own land in Central Kentucky? We guide landowners through every step — from land assessment and permits to builder matching, financing, and project management." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.lifebuiltinkentucky.com/build-on-your-land.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
-    :root { --white:#fefdfe;--forest:#335a3a;--sage:#668c66;--mist:#8faf9a;--linen:#d8d2c8;--deep:#3f5d4a;--ink:#1e2e22;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'PT Serif',Georgia,serif;--ease:0.35s cubic-bezier(0.4,0,0.2,1); }
+    :root {
+      --white:#fefdfe; --forest:#335a3a; --sage:#668c66; --mist:#8faf9a;
+      --linen:#d8d2c8; --deep:#3f5d4a; --ink:#1e2e22;
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-body:'PT Serif',Georgia,serif;
+      --ease:0.35s cubic-bezier(0.4,0,0.2,1);
+    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:var(--font-body);background:var(--white);color:var(--ink);}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);background:var(--white);color:var(--ink);overflow-x:hidden;}
     img{display:block;max-width:100%;}
     a{color:inherit;text-decoration:none;}
     ul{list-style:none;}
     button{cursor:pointer;font-family:inherit;border:none;background:none;}
+
+    /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(254,253,254,0.97);box-shadow:0 1px 0 var(--linen);}
     .nav-logo{display:flex;align-items:center;height:56px;}
     .nav-logo img{height:52px;width:auto;}
@@ -44,18 +55,156 @@
     .nav-dropdown-menu li a{display:block;padding:0.65rem 1.25rem;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--deep);transition:color var(--ease),background var(--ease);white-space:nowrap;}
     .nav-dropdown-menu li a::after{display:none;}
     .nav-dropdown-menu li a:hover{background:var(--linen);color:var(--forest);}
-    .coming-soon{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;background:var(--linen);text-align:center;}
-    .coming-soon-inner{max-width:600px;}
-    .cs-label{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem;}
-    .cs-heading{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;line-height:1.05;color:var(--ink);margin-bottom:1.5rem;}
-    .cs-heading em{font-style:italic;color:var(--forest);}
-    .cs-body{font-size:1rem;line-height:1.8;color:#4a5a4e;margin-bottom:2.5rem;}
+
+    /* BUTTONS */
     .btn-forest{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:var(--forest);color:var(--white);font-family:var(--font-body);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;border:1px solid var(--forest);transition:all var(--ease);}
     .btn-forest:hover{background:var(--deep);transform:translateY(-2px);}
-    @media(max-width:768px){.nav{padding:1rem 1.5rem;}.nav-links,.nav-cta{display:none;}.nav-toggle{display:flex;}}
+    .btn-outline-light{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:transparent;color:var(--white);font-family:var(--font-body);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;border:1px solid rgba(254,253,254,0.5);transition:all var(--ease);}
+    .btn-outline-light:hover{background:rgba(254,253,254,0.1);border-color:var(--white);}
+    .btn-outline-forest{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:transparent;color:var(--forest);font-family:var(--font-body);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;border:1px solid var(--forest);transition:all var(--ease);}
+    .btn-outline-forest:hover{background:var(--forest);color:var(--white);transform:translateY(-2px);}
+
+    /* SHARED */
+    .section-label{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-bottom:0.75rem;}
+    .section-heading{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;}
+    .section-heading em{font-style:italic;color:var(--forest);}
+    .body-text{font-size:1rem;line-height:1.85;color:#4a5a4e;margin-bottom:1rem;}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:none;}
+    .reveal-d1{transition-delay:0.1s;}
+    .reveal-d2{transition-delay:0.2s;}
+    .reveal-d3{transition-delay:0.3s;}
+
+    /* HERO */
+    .hero{min-height:85vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,46,34,0.88) 0%,rgba(30,46,34,0.55) 55%,rgba(30,46,34,0.35) 100%);}
+    .hero-content{position:relative;z-index:2;padding:0 2.5rem 5.5rem;width:100%;text-align:center;}
+    .hero-eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mist);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;}
+    .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:36px;height:1px;background:var(--mist);}
+    .hero-heading{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.05;color:var(--white);letter-spacing:-0.01em;margin-bottom:1.25rem;}
+    .hero-heading em{font-style:italic;color:var(--mist);}
+    .hero-sub{font-size:1.05rem;line-height:1.8;color:rgba(254,253,254,0.82);max-width:700px;margin:0 auto 2.5rem;}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+
+    /* VALUE PROPS */
+    .value-props{padding:5rem 2.5rem;background:var(--white);}
+    .value-props-inner{max-width:1100px;margin:0 auto;}
+    .value-props-header{max-width:680px;margin:0 auto 3.5rem;text-align:center;}
+    .value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;}
+    .value-card{padding:2rem;border-radius:4px;border-top:3px solid var(--mist);background:var(--white);box-shadow:0 2px 16px rgba(30,46,34,0.07);}
+    .value-icon{font-size:2rem;margin-bottom:1rem;}
+    .value-title{font-family:var(--font-display);font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:0.6rem;}
+    .value-text{font-size:0.92rem;line-height:1.75;color:#4a5a4e;}
+
+    /* PAIN POINTS */
+    .pain-points{padding:5rem 2.5rem;background:var(--linen);}
+    .pain-points-inner{max-width:1100px;margin:0 auto;}
+    .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:2.5rem;}
+    .pain-card{background:var(--white);border-radius:4px;padding:1.75rem;border-left:3px solid var(--mist);}
+    .pain-q{font-family:var(--font-display);font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:0.6rem;}
+    .pain-a{font-size:0.92rem;line-height:1.75;color:#4a5a4e;}
+
+    /* HOW IT WORKS */
+    .how-it-works{padding:5rem 2.5rem;background:var(--white);}
+    .how-it-works-inner{max-width:1100px;margin:0 auto;}
+    .how-it-works-header{max-width:680px;margin:0 auto 1rem;text-align:center;}
+    .steps-track{display:flex;flex-direction:column;gap:0;margin-top:3rem;}
+    .step-item{display:grid;grid-template-columns:80px 1fr;gap:0;position:relative;}
+    .step-item:not(:last-child) .step-spine::after{content:'';position:absolute;left:50%;top:72px;bottom:-1px;width:2px;background:var(--linen);transform:translateX(-50%);}
+    .step-left{display:flex;flex-direction:column;align-items:center;padding-bottom:2.5rem;}
+    .step-spine{position:relative;display:flex;flex-direction:column;align-items:center;width:100%;}
+    .step-num{width:52px;height:52px;border-radius:50%;background:var(--forest);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.25rem;font-weight:500;flex-shrink:0;z-index:1;}
+    .step-right{padding:0 0 3rem 2rem;}
+    .step-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:0.4rem;}
+    .step-title{font-family:var(--font-display);font-size:clamp(1.2rem,2.5vw,1.55rem);font-weight:500;color:var(--ink);margin-bottom:0.75rem;line-height:1.2;}
+    .step-body{font-size:0.95rem;line-height:1.8;color:#4a5a4e;margin-bottom:1rem;}
+    .step-list{display:flex;flex-direction:column;gap:0.5rem;margin:0.75rem 0 1rem;}
+    .step-list li{display:flex;align-items:flex-start;gap:0.65rem;font-size:0.92rem;line-height:1.7;color:#4a5a4e;}
+    .step-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--mist);flex-shrink:0;margin-top:0.6rem;}
+    .step-deliverables{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;}
+    .step-deliverable{display:flex;align-items:center;gap:0.5rem;background:rgba(51,90,58,0.07);border-radius:3px;padding:0.45rem 0.85rem;}
+    .step-deliverable-label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);}
+    .step-deliverable-val{font-size:0.82rem;color:var(--forest);font-weight:700;}
+
+    /* ACCORDION (FAQ) */
+    .faq-section{padding:5rem 2.5rem;background:var(--linen);}
+    .faq-inner{max-width:860px;margin:0 auto;}
+    .faq-header{text-align:center;margin-bottom:3rem;}
+    .accordion-item{border-bottom:1px solid rgba(0,0,0,0.1);}
+    .accordion-btn{width:100%;text-align:left;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:none;border:none;gap:1rem;}
+    .accordion-btn-left{flex:1;}
+    .accordion-title{font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.3rem);font-weight:500;color:var(--ink);line-height:1.25;}
+    .accordion-icon{width:32px;height:32px;border-radius:50%;border:1px solid var(--linen);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;color:var(--sage);transition:transform var(--ease),background var(--ease);}
+    .accordion-btn.open .accordion-icon{transform:rotate(45deg);background:var(--forest);color:var(--white);border-color:var(--forest);}
+    .accordion-body{max-height:0;overflow:hidden;transition:max-height 0.5s ease;}
+    .accordion-content{padding:0 0 1.75rem;}
+    .ac-body{font-size:0.97rem;line-height:1.85;color:#4a5a4e;margin-bottom:0.75rem;}
+    .ac-list{margin:0.5rem 0 0.75rem;display:flex;flex-direction:column;gap:0.5rem;}
+    .ac-list li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.93rem;line-height:1.7;color:#4a5a4e;}
+    .ac-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:0.6rem;}
+
+    /* LOWER CTA */
+    .lower-cta{position:relative;overflow:hidden;padding:7rem 2.5rem;text-align:center;}
+    .lower-cta-bg{position:absolute;inset:0;background:var(--ink);}
+    .lower-cta-bg img{width:100%;height:100%;object-fit:cover;opacity:0.18;}
+    .lower-cta-content{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+    .lower-cta-eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mist);margin-bottom:1rem;}
+    .lower-cta-heading{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:1.25rem;}
+    .lower-cta-heading em{font-style:italic;color:var(--mist);}
+    .lower-cta-body{font-size:1rem;line-height:1.8;color:rgba(254,253,254,0.75);margin-bottom:2rem;}
+    .lower-cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .contact-direct{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;border-top:1px solid rgba(255,255,255,0.08);padding-top:2rem;}
+    .contact-direct-item{display:flex;flex-direction:column;align-items:center;gap:0.3rem;}
+    .contact-direct-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(254,253,254,0.4);}
+    .contact-direct-val{font-size:0.95rem;color:rgba(254,253,254,0.8);transition:color var(--ease);}
+    .contact-direct-val:hover{color:var(--mist);}
+    .ghl-placeholder{background:rgba(254,253,254,0.05);border:1px dashed rgba(143,175,154,0.4);border-radius:4px;padding:2rem;margin-bottom:2rem;text-align:center;}
+    .ghl-placeholder p{font-size:0.82rem;color:rgba(254,253,254,0.4);}
+    .ghl-placeholder code{font-size:0.75rem;color:var(--mist);font-family:monospace;}
+
+    /* FOOTER */
+    footer{background:var(--ink);color:rgba(254,253,254,0.75);padding:4rem 2.5rem 2rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(254,253,254,0.1);margin-bottom:2rem;}
+    .footer-logo-img{width:160px;height:auto;margin-bottom:0.75rem;}
+    .footer-tagline{font-size:0.78rem;color:var(--mist);font-style:italic;letter-spacing:0.08em;margin-bottom:1.25rem;}
+    .footer-contact-item{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;margin-bottom:0.5rem;color:rgba(254,253,254,0.7);}
+    .footer-contact-item a:hover{color:var(--mist);}
+    .footer-col-title{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:1.25rem;}
+    .footer-links li{margin-bottom:0.65rem;}
+    .footer-links a{font-size:0.88rem;color:rgba(254,253,254,0.65);transition:color var(--ease);}
+    .footer-links a:hover{color:var(--white);}
+    .social-icons{display:flex;gap:0.75rem;margin-top:1rem;}
+    .social-icon{width:38px;height:38px;border-radius:50%;border:1px solid rgba(254,253,254,0.2);display:flex;align-items:center;justify-content:center;transition:all var(--ease);color:rgba(254,253,254,0.65);}
+    .social-icon:hover{border-color:var(--mist);color:var(--mist);background:rgba(143,175,154,0.1);}
+    .social-icon svg{width:16px;height:16px;fill:currentColor;}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.78rem;color:rgba(254,253,254,0.4);}
+    .footer-bottom a{color:rgba(254,253,254,0.5);}
+    .footer-bottom a:hover{color:var(--mist);}
+    .fair-housing{font-size:0.72rem;color:rgba(254,253,254,0.3);margin-top:1rem;line-height:1.6;}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .footer-top{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:768px){
+      .nav{padding:1rem 1.5rem;}
+      .nav-links,.nav-cta{display:none;}
+      .nav-toggle{display:flex;}
+      .hero-content{padding:0 1.5rem 4rem;}
+      .value-props,.pain-points,.how-it-works,.faq-section,.lower-cta{padding-left:1.5rem;padding-right:1.5rem;}
+      .step-item{grid-template-columns:56px 1fr;}
+      .step-num{width:40px;height:40px;font-size:1rem;}
+      .step-right{padding:0 0 2.5rem 1.25rem;}
+      .contact-direct{gap:1.5rem;}
+      .footer-top{grid-template-columns:1fr;gap:2rem;}
+    }
   </style>
 </head>
 <body>
+
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="/" class="nav-logo" aria-label="Life Built in Kentucky Home">
       <img src="/images/Logo.png" alt="Life Built in Kentucky logo" width="140" height="140" loading="eager" />
@@ -68,7 +217,7 @@
         <ul class="nav-dropdown-menu" role="list">
           <li><a href="/buy-land.html">Buy Land</a></li>
           <li><a href="/buy-land-and-build.html">Buy Land &amp; Build</a></li>
-          <li><a href="/build-on-your-land.html">Build on Land You Own</a></li>
+          <li><a href="/build-on-your-land.html" aria-current="true">Build on Land You Own</a></li>
         </ul>
       </li>
       <li><a href="/about.html">About</a></li>
@@ -77,6 +226,7 @@
     <a href="/contact.html" class="nav-cta">Let's Talk</a>
     <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
   </nav>
+
   <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
     <button class="mobile-nav-close" id="mobileNavClose">&#x2715;</button>
     <a href="/buy.html">Buy</a>
@@ -91,21 +241,525 @@
     <a href="/blog.html">Blog</a>
     <a href="/contact.html">Let's Talk</a>
   </div>
+
   <main>
-    <div class="coming-soon">
-      <div class="coming-soon-inner">
-        <p class="cs-label">Build on Land You Own</p>
-        <h1 class="cs-heading">This Page Is <em>Coming Soon.</em></h1>
-        <p class="cs-body">We're putting together everything you need to know about building your dream home on land you already own. In the meantime, reach out and Toni will walk you through the process directly.</p>
-        <a href="/contact.html" class="btn-forest">Talk to Toni</a>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Build on your land hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="/images/Resized_Resized_20231027_174328.jpeg" alt="Kentucky property with rolling hills and clear sky" loading="eager" />
       </div>
-    </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Build on Land You Own</p>
+        <h1 class="hero-heading">Ready to build the home<br>you've been planning on<br><em>your own property?</em></h1>
+        <p class="hero-sub">You already have the land. Now you need the right partner — someone who understands what it takes to go from raw acreage to a finished home in Central Kentucky, and who walks with you every step of the way.</p>
+        <div class="hero-actions">
+          <a href="/contact.html" class="btn-forest">Schedule Free Consultation</a>
+          <a href="#how-it-works" class="btn-outline-light">See the Process</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE PROPOSITIONS -->
+    <section class="value-props" aria-labelledby="value-heading">
+      <div class="value-props-inner">
+        <div class="value-props-header reveal">
+          <p class="section-label">Why Work With Us</p>
+          <h2 class="section-heading" id="value-heading">Why Choose Life Built in Kentucky <em>for Landowners</em></h2>
+          <p class="body-text">You've already done the hard part of securing land. What you need now is an experienced guide who knows Kentucky's counties, contractors, and codes — so you don't have to figure it out alone.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card reveal reveal-d1">
+            <div class="value-icon" aria-hidden="true">&#127968;</div>
+            <h3 class="value-title">Expert Guidance for Landowners</h3>
+            <p class="value-text">We specialize in helping people who already own land navigate the unique challenges of building — from soil conditions to zoning to builder selection. This isn't a side service. It's what we do.</p>
+          </div>
+          <div class="value-card reveal reveal-d2">
+            <div class="value-icon" aria-hidden="true">&#127987;</div>
+            <h3 class="value-title">Deep Kentucky Knowledge</h3>
+            <p class="value-text">We know Central Kentucky's counties, permitting offices, code requirements, and trusted builders. That local knowledge saves you time, money, and avoidable headaches on a project this size.</p>
+          </div>
+          <div class="value-card reveal reveal-d1">
+            <div class="value-icon" aria-hidden="true">&#128200;</div>
+            <h3 class="value-title">Land to Home, Simplified</h3>
+            <p class="value-text">The process from raw land to a completed home is long and complicated. We map out every step, coordinate the right people at the right times, and keep things moving — so you're never left guessing what comes next.</p>
+          </div>
+          <div class="value-card reveal reveal-d2">
+            <div class="value-icon" aria-hidden="true">&#129309;</div>
+            <h3 class="value-title">One Trusted Partner</h3>
+            <p class="value-text">Instead of managing a builder, a lender, a permit office, an architect, and a contractor separately, you have one person keeping it all together and advocating for you through the entire journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="pain-points" aria-labelledby="pain-heading">
+      <div class="pain-points-inner">
+        <div class="reveal">
+          <p class="section-label">Common Concerns</p>
+          <h2 class="section-heading" id="pain-heading">We've Heard Every <em>Landowner Question</em></h2>
+          <p class="body-text">If you're sitting on a piece of land wondering where to even begin, you're not alone. These are the questions we hear most — and the honest answers.</p>
+        </div>
+        <div class="pain-grid">
+          <div class="pain-card reveal reveal-d1">
+            <p class="pain-q">"I'm not sure if my land is even buildable."</p>
+            <p class="pain-a">That's exactly where we start. A land assessment evaluates soil conditions, zoning, utility access, and topography to tell you what you're working with — before you spend a dollar on design or permits.</p>
+          </div>
+          <div class="pain-card reveal reveal-d2">
+            <p class="pain-q">"I don't know where to begin."</p>
+            <p class="pain-a">Step one is a free consultation. You tell us about your land and your goals, and we lay out a clear roadmap from where you are now to a finished home. No pressure, no jargon.</p>
+          </div>
+          <div class="pain-card reveal reveal-d1">
+            <p class="pain-q">"How do I find a builder I can actually trust?"</p>
+            <p class="pain-a">We connect you with vetted, Kentucky-based builders who have real experience building on raw land — not just subdivision lots. You get options, introductions, and help evaluating who's the right fit for your project.</p>
+          </div>
+          <div class="pain-card reveal reveal-d2">
+            <p class="pain-q">"Can I even get financing on raw land?"</p>
+            <p class="pain-a">Yes — but it works differently than a standard mortgage. We connect you with lenders experienced in construction loans and land financing, and help you understand your options clearly before you commit to anything.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works" aria-labelledby="hiw-heading">
+      <div class="how-it-works-inner">
+        <div class="how-it-works-header reveal">
+          <p class="section-label">The Process</p>
+          <h2 class="section-heading" id="hiw-heading">How We Take You From <em>Land to Home</em></h2>
+          <p class="body-text">Six clear steps. One consistent guide. No guesswork about what comes next or who handles what.</p>
+        </div>
+
+        <div class="steps-track">
+
+          <!-- STEP 1 -->
+          <div class="step-item reveal">
+            <div class="step-left">
+              <div class="step-spine">
+                <div class="step-num" aria-hidden="true">1</div>
+              </div>
+            </div>
+            <div class="step-right">
+              <p class="step-label">Step One</p>
+              <h3 class="step-title">Land Assessment &amp; Evaluation</h3>
+              <p class="step-body">Before any design or planning begins, we need to understand your land. A thorough assessment tells us exactly what we're working with — and identifies any challenges before they become expensive surprises.</p>
+              <ul class="step-list">
+                <li>Evaluate your property to determine buildability</li>
+                <li>Review zoning regulations and local county codes</li>
+                <li>Assess soil conditions, topography, and drainage</li>
+                <li>Confirm utility access (water, electric, septic options)</li>
+                <li>Identify potential challenges and map out solutions early</li>
+              </ul>
+              <div class="step-deliverables">
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">You Get</span>
+                  <span class="step-deliverable-val">Land Assessment Report</span>
+                </div>
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">Timeline</span>
+                  <span class="step-deliverable-val">5–7 Business Days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step-item reveal">
+            <div class="step-left">
+              <div class="step-spine">
+                <div class="step-num" aria-hidden="true">2</div>
+              </div>
+            </div>
+            <div class="step-right">
+              <p class="step-label">Step Two</p>
+              <h3 class="step-title">Design &amp; Planning Consultation</h3>
+              <p class="step-body">Now that we know your land, we talk about your vision. What kind of home do you want? What does your budget look like? What design feels like home to you? This is where the dream starts taking shape.</p>
+              <ul class="step-list">
+                <li>Discuss your vision, goals, and must-haves for the home</li>
+                <li>Review design options that work with your specific land</li>
+                <li>Explore architectural styles, layouts, and square footage</li>
+                <li>Discuss realistic budget ranges and financing options</li>
+                <li>Connect you with architects or designers if needed</li>
+              </ul>
+              <div class="step-deliverables">
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">You Get</span>
+                  <span class="step-deliverable-val">Personalized Building Plan Overview</span>
+                </div>
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">Timeline</span>
+                  <span class="step-deliverable-val">2–4 Weeks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step-item reveal">
+            <div class="step-left">
+              <div class="step-spine">
+                <div class="step-num" aria-hidden="true">3</div>
+              </div>
+            </div>
+            <div class="step-right">
+              <p class="step-label">Step Three</p>
+              <h3 class="step-title">Builder Matching &amp; Selection</h3>
+              <p class="step-body">Choosing the right builder is one of the most important decisions in this entire process. We don't leave you to search alone — we connect you with vetted, Kentucky-based builders who have proven experience on raw land builds.</p>
+              <ul class="step-list">
+                <li>Match you with 2–3 qualified builders suited to your project</li>
+                <li>Review builder credentials, experience, and completed portfolios</li>
+                <li>Compare builder options specific to your land and budget</li>
+                <li>Facilitate introductions and attend initial meetings with you</li>
+                <li>Help you evaluate fit, communication style, and contract terms</li>
+              </ul>
+              <div class="step-deliverables">
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">You Get</span>
+                  <span class="step-deliverable-val">2–3 Qualified Builder Options</span>
+                </div>
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">Timeline</span>
+                  <span class="step-deliverable-val">1–2 Weeks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step-item reveal">
+            <div class="step-left">
+              <div class="step-spine">
+                <div class="step-num" aria-hidden="true">4</div>
+              </div>
+            </div>
+            <div class="step-right">
+              <p class="step-label">Step Four</p>
+              <h3 class="step-title">Financing &amp; Loan Navigation</h3>
+              <p class="step-body">Construction financing works differently than a standard home mortgage. It can feel overwhelming — especially on raw land. We connect you with the right lenders and walk you through your options in plain language, not bank jargon.</p>
+              <ul class="step-list">
+                <li>Guide you through land and construction financing options</li>
+                <li>Connect with lenders experienced in construction-to-permanent loans</li>
+                <li>Explain different loan structures and what each requires from you</li>
+                <li>Help prepare application materials and documentation</li>
+                <li>Coordinate communication between you, your builder, and your lender</li>
+              </ul>
+              <div class="step-deliverables">
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">You Get</span>
+                  <span class="step-deliverable-val">Clear Financing Timeline &amp; Loan Options</span>
+                </div>
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">Timeline</span>
+                  <span class="step-deliverable-val">2–3 Weeks to Pre-Approval</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="step-item reveal">
+            <div class="step-left">
+              <div class="step-spine">
+                <div class="step-num" aria-hidden="true">5</div>
+              </div>
+            </div>
+            <div class="step-right">
+              <p class="step-label">Step Five</p>
+              <h3 class="step-title">Permits, Approvals &amp; Site Preparation</h3>
+              <p class="step-body">Permits in Kentucky vary by county and can take longer than people expect. We coordinate the process so nothing falls through the cracks and your build starts on time — not weeks late because of paperwork.</p>
+              <ul class="step-list">
+                <li>Coordinate all required permits (building, electrical, plumbing, septic)</li>
+                <li>Work with local county and city authorities for approvals</li>
+                <li>Ensure full compliance with county regulations and Kentucky building code</li>
+                <li>Prepare land for construction: surveys, clearing, utility setup</li>
+                <li>Build out a detailed project timeline with your chosen builder</li>
+              </ul>
+              <div class="step-deliverables">
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">You Get</span>
+                  <span class="step-deliverable-val">Approved Permits &amp; Construction-Ready Land</span>
+                </div>
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">Timeline</span>
+                  <span class="step-deliverable-val">4–8 Weeks (Varies by County)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 6 -->
+          <div class="step-item reveal">
+            <div class="step-left">
+              <div class="step-spine">
+                <div class="step-num" aria-hidden="true">6</div>
+              </div>
+            </div>
+            <div class="step-right">
+              <p class="step-label">Step Six</p>
+              <h3 class="step-title">Build &amp; Project Management</h3>
+              <p class="step-body">This is the longest phase — and the one where people most often feel left in the dark. We stay involved throughout construction so you always know what's happening, what's next, and who's accountable.</p>
+              <ul class="step-list">
+                <li>Oversee the project from groundbreaking to completion</li>
+                <li>Provide regular progress updates and communication</li>
+                <li>Manage inspections and code compliance throughout the build</li>
+                <li>Address any issues or scope changes that arise during construction</li>
+                <li>Ensure quality standards and timeline adherence by your builder</li>
+              </ul>
+              <div class="step-deliverables">
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">You Get</span>
+                  <span class="step-deliverable-val">Your Completed Dream Home</span>
+                </div>
+                <div class="step-deliverable">
+                  <span class="step-deliverable-label">Timeline</span>
+                  <span class="step-deliverable-val">6–12 Months (Varies by Size)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /steps-track -->
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <div class="faq-header reveal">
+          <p class="section-label">Common Questions</p>
+          <h2 class="section-heading" id="faq-heading">Questions Landowners <em>Ask Us</em></h2>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-btn" aria-expanded="false">
+            <div class="accordion-btn-left">
+              <p class="accordion-title">What makes land "buildable"?</p>
+            </div>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" role="region">
+            <div class="accordion-content">
+              <p class="ac-body">Buildable land needs to meet several conditions: appropriate zoning for residential use, adequate soil for septic (if not on city sewer), access to water (well or municipal), and physical characteristics that allow for a foundation — no severe flooding, excessive slope, or protected wetlands. Topography, setback requirements, and utility availability all factor in. That's why we start with a land assessment before any other planning.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-btn" aria-expanded="false">
+            <div class="accordion-btn-left">
+              <p class="accordion-title">What permits do I need to build in Kentucky?</p>
+            </div>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" role="region">
+            <div class="accordion-content">
+              <p class="ac-body">At minimum, you'll need a building permit from your county. Depending on your situation, you may also need:</p>
+              <ul class="ac-list">
+                <li>Septic system permit from your county Health Department</li>
+                <li>Well permit (some counties require this before drilling)</li>
+                <li>Electrical permit and HVAC permit</li>
+                <li>Driveway access permit from your county road department</li>
+                <li>Grading or stormwater permit if your site requires significant earth movement</li>
+              </ul>
+              <p class="ac-body">Requirements vary county by county in Central Kentucky. We coordinate all of this as part of the process.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-btn" aria-expanded="false">
+            <div class="accordion-btn-left">
+              <p class="accordion-title">How long does the entire process take?</p>
+            </div>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" role="region">
+            <div class="accordion-content">
+              <p class="ac-body">From land assessment to move-in day, plan for roughly 12–18 months on a standard custom build. The phases break down roughly like this:</p>
+              <ul class="ac-list">
+                <li>Land assessment and planning: 1–2 months</li>
+                <li>Builder selection and financing: 1–2 months</li>
+                <li>Permitting and site prep: 1–3 months (varies by county)</li>
+                <li>Construction: 6–12 months depending on home size and complexity</li>
+              </ul>
+              <p class="ac-body">Build in buffer time — weather, supply chain, and permitting delays are common. If you want to be in your home by a specific date, work backward from there.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-btn" aria-expanded="false">
+            <div class="accordion-btn-left">
+              <p class="accordion-title">Can I get financing if I already own raw land?</p>
+            </div>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" role="region">
+            <div class="accordion-content">
+              <p class="ac-body">Yes. Owning the land outright can actually work in your favor. You may be able to use the land's equity as part of your down payment on a construction loan. A construction-to-permanent loan covers the build and then converts to a standard mortgage when your home is complete — so you only close once. We connect you with lenders experienced in this type of financing so you understand your exact options.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-btn" aria-expanded="false">
+            <div class="accordion-btn-left">
+              <p class="accordion-title">Do you work with any builder, or only specific ones?</p>
+            </div>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" role="region">
+            <div class="accordion-content">
+              <p class="ac-body">We maintain relationships with vetted, Kentucky-based builders who have proven experience on raw land — not just subdivision builds. That said, if you already have a builder in mind or a relationship you trust, we can absolutely work with them. Our role is to support you and make sure your interests are protected throughout, regardless of who's swinging the hammer.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-btn" aria-expanded="false">
+            <div class="accordion-btn-left">
+              <p class="accordion-title">What's a realistic cost range for building in Central Kentucky?</p>
+            </div>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-body" role="region">
+            <div class="accordion-content">
+              <p class="ac-body">Custom home construction in Central Kentucky typically runs $150–$250+ per square foot depending on finishes, design complexity, and site conditions. A 1,800 sq ft home might range from $270,000–$450,000 for the build alone — before site prep, utilities, permits, landscaping, and your contingency buffer. Site prep on raw land adds $15,000–$50,000+ depending on clearing, grading, and utility work needed. We walk through realistic cost estimates during your consultation based on your specific land and goals.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOWER CTA -->
+    <section class="lower-cta" aria-labelledby="cta-heading">
+      <div class="lower-cta-bg" aria-hidden="true">
+        <img src="/images/20240713_065258.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="lower-cta-content">
+        <p class="lower-cta-eyebrow">Ready to Start?</p>
+        <h2 class="lower-cta-heading" id="cta-heading">Ready to Build <em>on Your Land?</em></h2>
+        <p class="lower-cta-body">Let's start with a free consultation. You tell us about your property and what you're hoping to build, and we'll give you an honest assessment of what it takes to get there — no pressure, no obligation.</p>
+        <div class="lower-cta-actions">
+          <a href="/contact.html" class="btn-forest">Schedule Free Consultation</a>
+          <a href="/contact.html" class="btn-outline-light">Send Us a Message</a>
+        </div>
+
+        <!-- GHL FORM PLACEHOLDER -->
+        <div class="ghl-placeholder">
+          <p>GHL form embed goes here</p>
+          <code>&lt;!-- Replace this div with your GHL embed code --&gt;</code>
+        </div>
+
+        <div class="contact-direct">
+          <div class="contact-direct-item">
+            <span class="contact-direct-label">Call or Text</span>
+            <a href="tel:8596124044" class="contact-direct-val">859-612-4044</a>
+          </div>
+          <div class="contact-direct-item">
+            <span class="contact-direct-label">Email</span>
+            <a href="mailto:home@lifebuiltinkentucky.com" class="contact-direct-val">home@lifebuiltinkentucky.com</a>
+          </div>
+          <div class="contact-direct-item">
+            <span class="contact-direct-label">Service Area</span>
+            <span class="contact-direct-val">Central Kentucky</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="/images/Logo.png" alt="Life Built in Kentucky" class="footer-logo-img" loading="lazy" />
+          <p class="footer-tagline">Real estate + general contracting in Central Kentucky.</p>
+          <div class="footer-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:8596124044">859-612-4044</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:home@lifebuiltinkentucky.com">home@lifebuiltinkentucky.com</a>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/toni.schafer.9" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/lifebuiltinky" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@LifeBuiltinKentucky" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="/buy.html">Buy a Home</a></li>
+            <li><a href="/sell.html">Sell Your Home</a></li>
+            <li><a href="/build.html">Build &amp; Renovate</a></li>
+            <li><a href="/buy-land.html">Buy Land</a></li>
+            <li><a href="/buy-land-and-build.html">Buy Land &amp; Build</a></li>
+            <li><a href="/build-on-your-land.html">Build on Your Land</a></li>
+            <!-- PORTFOLIO HIDDEN - add project folders and restore when ready -->
+            <!-- <li><a href="/portfolio.html">Portfolio</a></li> -->
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">About Toni</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Life Built in Kentucky. All rights reserved.</span>
+        <span>Toni Schafer, REALTOR&reg; &amp; General Contractor | Serving Central Kentucky</span>
+      </div>
+      <p class="fair-housing">Life Built in Kentucky operates in accordance with the Fair Housing Act. We do not discriminate on the basis of race, color, national origin, religion, sex, familial status, or disability.</p>
+    </div>
+  </footer>
+
   <script>
+    // Mobile nav
     const t=document.getElementById('navToggle'),m=document.getElementById('mobileNav'),c=document.getElementById('mobileNavClose');
     t.addEventListener('click',()=>{m.classList.add('open');t.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
     c.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded','false');document.body.style.overflow='';});
     m.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{m.classList.remove('open');document.body.style.overflow='';}));
+
+    // Scroll reveal
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.accordion-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const body=btn.nextElementSibling;
+        const isOpen=btn.classList.contains('open');
+        // close all
+        document.querySelectorAll('.accordion-btn').forEach(b=>{
+          b.classList.remove('open');
+          b.setAttribute('aria-expanded','false');
+          b.nextElementSibling.style.maxHeight=null;
+        });
+        if(!isOpen){
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+          body.style.maxHeight=body.scrollHeight+'px';
+        }
+      });
+    });
   </script>
 </body>
 </html>
