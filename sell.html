@@ -303,7 +303,7 @@
        Whether you're selling a family home, a farm, or generations of memories built into Kentucky land, you deserve an agent who understands what you're letting go of. And who works to get your home into the right hands.
      </p>
      <div class="hero-actions">
-       <a href="#cta" class="btn-white">Schedule a Consultation</a>
+       <button onclick="openSellerForm()" class="btn-white">Schedule a Consultation</button>
        <a href="#process" class="btn-outline-light">How It Works</a>
      </div>
    </div>
@@ -520,11 +520,11 @@
        <h2 class="section-heading" id="cta-heading">Ready to Talk About <em style="color:var(--mist);">Selling?</em></h2>
        <p class="body-text">Whether you're just starting to think about selling or you've been planning this for a while, let's have a conversation about what's possible. No obligation. Just honest guidance from someone who understands both the real estate and the life transition side of selling.</p>
        <div class="cta-strip-btns">
-         <a href="/contact.html" class="btn-white">Schedule a Consultation</a>
+         <button onclick="openSellerForm()" class="btn-white">Schedule a Consultation</button>
          <a href="tel:8596124044" class="btn-outline-light">Call 859-612-4044</a>
        </div>
        <!-- GHL SELLER CONSULTATION FORM -->
-       <div style="margin-top:2rem;">
+       <div id="seller-form-wrap" style="display:none;margin-top:2rem;">
          <iframe src="https://api.leadconnectorhq.com/widget/form/AjIVw1xtxGyIXsHE16ZF" style="width:100%;border:none;overflow:hidden;min-height:500px;" scrolling="no" id="msgsndr-AjIVw1xtxGyIXsHE16ZF" title="Seller Consultation Form"></iframe>
          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
        </div>
@@ -627,7 +627,12 @@
  mobileNavClose.addEventListener('click', () => { mobileNav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; });
  mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { mobileNav.classList.remove('open'); document.body.style.overflow=''; }));
  document.addEventListener('keydown', e => { if (e.key==='Escape' && mobileNav.classList.contains('open')) { mobileNav.classList.remove('open'); document.body.style.overflow=''; } });
- const reveals = document.querySelectorAll('.reveal');
+ function openSellerForm() {
+  const wrap = document.getElementById('seller-form-wrap');
+  wrap.style.display = 'block';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+const reveals = document.querySelectorAll('.reveal');
  const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
  reveals.forEach(r => obs.observe(r));
  </script>
