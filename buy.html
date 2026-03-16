@@ -454,7 +454,7 @@
             That means every home you walk through gets seen with a builder's eye, not just an agent's.
           </p>
           <div class="hero-actions">
-            <a href="#buyer-consult" class="btn-primary" aria-label="Schedule a free buyer consultation with Toni Schafer">Schedule a Consultation</a>
+            <button onclick="openBuyerForm()" class="btn-primary" aria-label="Schedule a free buyer consultation with Toni Schafer">Schedule a Consultation</button>
             <a href="#search-homes" class="btn-outline-light" aria-label="Search available homes in Central Kentucky">Search Homes</a>
           </div>
         </div>
@@ -626,23 +626,25 @@
           <h3 class="form-title">Let's Connect</h3>
           <p class="form-sub">Fill this out and Toni will reach out within one business day.</p>
 
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/l1Cn5X8RHEssui9Mjiiv"
-            style="width:100%;border:none;border-radius:3px"
-            id="inline-l1Cn5X8RHEssui9Mjiiv"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="BUYER FORM"
-            data-height="3561"
-            data-layout-iframe-id="inline-l1Cn5X8RHEssui9Mjiiv"
-            data-form-id="l1Cn5X8RHEssui9Mjiiv"
-            title="Buyer Consultation Form"
-          ></iframe>
+          <div id="buyer-form-wrap" style="display:none;">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/l1Cn5X8RHEssui9Mjiiv"
+              style="width:100%;border:none;border-radius:3px"
+              id="inline-l1Cn5X8RHEssui9Mjiiv"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="BUYER FORM"
+              data-height="3561"
+              data-layout-iframe-id="inline-l1Cn5X8RHEssui9Mjiiv"
+              data-form-id="l1Cn5X8RHEssui9Mjiiv"
+              title="Buyer Consultation Form"
+            ></iframe>
+          </div>
 
         </div>
       </div>
@@ -669,7 +671,7 @@
             Whether you are buying your first home, relocating to Kentucky, or looking for land to build on, Toni brings both the market knowledge and the builder's perspective that most buyers never have access to.
           </p>
           <div class="toni-cta-btns">
-            <a href="#buyer-consult" class="btn-forest" aria-label="Schedule a free buyer consultation">Schedule a Consultation</a>
+            <button onclick="openBuyerForm()" class="btn-forest" aria-label="Schedule a free buyer consultation">Schedule a Consultation</button>
             <a href="tel:8596124044" class="btn-outline-forest" aria-label="Call Toni at 859-612-4044">Call 859-612-4044</a>
           </div>
         </div>
@@ -745,6 +747,12 @@
     mobileNavClose.addEventListener('click', () => { mobileNav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; });
     mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { mobileNav.classList.remove('open'); document.body.style.overflow=''; }));
     document.addEventListener('keydown', e => { if (e.key==='Escape' && mobileNav.classList.contains('open')) { mobileNav.classList.remove('open'); document.body.style.overflow=''; } });
+
+    function openBuyerForm() {
+      const wrap = document.getElementById('buyer-form-wrap');
+      wrap.style.display = 'block';
+      document.getElementById('buyer-consult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     const reveals = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
