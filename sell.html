@@ -220,6 +220,13 @@
  .reveal-delay-4 { transition-delay: 0.48s; }
 
  /* RESPONSIVE */
+ /* GHL MODAL */
+ .ghl-modal { display:none; position:fixed; inset:0; z-index:500; background:rgba(0,0,0,0.72); overflow-y:auto; padding:2rem 1rem; }
+ .ghl-modal.open { display:flex; align-items:flex-start; justify-content:center; }
+ .ghl-modal-box { background:#fff; border-radius:6px; width:100%; max-width:700px; position:relative; padding:1.5rem; margin:auto; }
+ .ghl-modal-close { position:absolute; top:0.75rem; right:0.75rem; width:34px; height:34px; border-radius:50%; border:1px solid var(--linen); background:var(--white); color:var(--ink); font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
+ .ghl-modal-close:hover { background:var(--linen); }
+
  @media (max-width: 1024px) {
    .narrative-inner { grid-template-columns: 1fr; gap: 3rem; }
    .narrative-photo { max-width: 480px; }
@@ -523,27 +530,6 @@
          <button onclick="openSellerForm()" class="btn-white">Schedule a Consultation</button>
          <a href="tel:8596124044" class="btn-outline-light">Call 859-612-4044</a>
        </div>
-       <!-- GHL SELLER CONSULTATION FORM -->
-       <div id="seller-form-wrap" style="display:none;margin-top:2rem;">
-         <iframe
-           src="https://api.leadconnectorhq.com/widget/form/AjIVw1xtxGyIXsHE16ZF"
-           style="width:100%;border:none;border-radius:3px"
-           id="inline-AjIVw1xtxGyIXsHE16ZF"
-           data-layout="{'id':'INLINE'}"
-           data-trigger-type="alwaysShow"
-           data-trigger-value=""
-           data-activation-type="alwaysActivated"
-           data-activation-value=""
-           data-deactivation-type="neverDeactivate"
-           data-deactivation-value=""
-           data-form-name="SELLER FORM"
-           data-height="4925"
-           data-layout-iframe-id="inline-AjIVw1xtxGyIXsHE16ZF"
-           data-form-id="AjIVw1xtxGyIXsHE16ZF"
-           title="SELLER FORM"
-         ></iframe>
-       </div>
-       <!-- END GHL SELLER FORM -->
      </div>
    </div>
  </section>
@@ -589,6 +575,30 @@
  </section>
 
  </main>
+
+ <!-- Seller Form Modal -->
+ <div id="seller-modal" class="ghl-modal" role="dialog" aria-modal="true" aria-label="Seller Consultation Form">
+   <div class="ghl-modal-box">
+     <button class="ghl-modal-close" onclick="closeSellerModal()" aria-label="Close form">&#x2715;</button>
+     <iframe
+       src="https://api.leadconnectorhq.com/widget/form/AjIVw1xtxGyIXsHE16ZF"
+       style="width:100%;border:none;border-radius:3px"
+       id="inline-AjIVw1xtxGyIXsHE16ZF"
+       data-layout="{'id':'INLINE'}"
+       data-trigger-type="alwaysShow"
+       data-trigger-value=""
+       data-activation-type="alwaysActivated"
+       data-activation-value=""
+       data-deactivation-type="neverDeactivate"
+       data-deactivation-value=""
+       data-form-name="SELLER FORM"
+       data-height="4925"
+       data-layout-iframe-id="inline-AjIVw1xtxGyIXsHE16ZF"
+       data-form-id="AjIVw1xtxGyIXsHE16ZF"
+       title="Seller Consultation Form"
+     ></iframe>
+   </div>
+ </div>
 
  <!-- Footer -->
  <footer role="contentinfo">
@@ -641,12 +651,23 @@
  navToggle.addEventListener('click', () => { mobileNav.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
  mobileNavClose.addEventListener('click', () => { mobileNav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; });
  mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { mobileNav.classList.remove('open'); document.body.style.overflow=''; }));
- document.addEventListener('keydown', e => { if (e.key==='Escape' && mobileNav.classList.contains('open')) { mobileNav.classList.remove('open'); document.body.style.overflow=''; } });
+ document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (mobileNav.classList.contains('open')) { mobileNav.classList.remove('open'); document.body.style.overflow=''; }
+    closeSellerModal();
+  }
+});
  function openSellerForm() {
-  const wrap = document.getElementById('seller-form-wrap');
-  wrap.style.display = 'block';
-  wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('seller-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
+function closeSellerModal() {
+  document.getElementById('seller-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('seller-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeSellerModal();
+});
 const reveals = document.querySelectorAll('.reveal');
  const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
  reveals.forEach(r => obs.observe(r));
