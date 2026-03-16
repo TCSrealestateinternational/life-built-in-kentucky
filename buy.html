@@ -306,22 +306,6 @@
     }
     .form-sub { font-size: 0.85rem; color: #888; margin-bottom: 2rem; }
 
-    /* GHL Embed placeholder */
-    .ghl-placeholder {
-      background: var(--linen); border: 2px dashed var(--mist);
-      border-radius: 4px; padding: 2.5rem; text-align: center;
-      min-height: 280px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 0.75rem;
-    }
-    .ghl-placeholder h4 {
-      font-family: var(--font-display); font-size: 1.2rem; color: var(--forest); font-weight: 400;
-    }
-    .ghl-placeholder p { font-size: 0.82rem; color: #888; line-height: 1.6; max-width: 300px; }
-    .ghl-placeholder code {
-      font-size: 0.75rem; color: var(--forest); background: rgba(51,90,58,0.08);
-      padding: 0.5rem 1rem; border-radius: 3px; font-family: monospace;
-    }
-
     /* TONI CTA SPLIT */
     .toni-cta { padding: 5rem 2.5rem; background: var(--white); }
     .toni-cta-inner {
@@ -642,15 +626,23 @@
           <h3 class="form-title">Let's Connect</h3>
           <p class="form-sub">Fill this out and Toni will reach out within one business day.</p>
 
-          <!-- GHL BUYER CONSULTATION FORM EMBED -->
-          <!-- Replace the placeholder below with your Go High Level embedded form code -->
-          <div class="ghl-placeholder" role="form" aria-label="Buyer consultation request form">
-            <span style="font-size:2rem;" aria-hidden="true">📋</span>
-            <h4>Buyer Consultation Form</h4>
-            <p>Your Go High Level form will be embedded here. See the GHL setup guide for step-by-step VA instructions.</p>
-            <code>&lt;!-- GHL Buyer Form Embed Code --&gt;</code>
-          </div>
-          <!-- END GHL FORM PLACEHOLDER -->
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/l1Cn5X8RHEssui9Mjiiv"
+            style="width:100%;border:none;border-radius:3px"
+            id="inline-l1Cn5X8RHEssui9Mjiiv"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="BUYER FORM"
+            data-height="3561"
+            data-layout-iframe-id="inline-l1Cn5X8RHEssui9Mjiiv"
+            data-form-id="l1Cn5X8RHEssui9Mjiiv"
+            title="Buyer Consultation Form"
+          ></iframe>
 
         </div>
       </div>
@@ -744,6 +736,7 @@
     </div>
   </footer>
 
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <script>
     const navToggle = document.getElementById('navToggle');
     const mobileNav = document.getElementById('mobileNav');
