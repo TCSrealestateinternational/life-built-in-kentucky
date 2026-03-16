@@ -196,9 +196,7 @@
     .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;}
     .cta-talk-points{display:flex;flex-direction:column;gap:0.4rem;margin:1.5rem 0;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;}
     .cta-talk-point{font-size:0.88rem;color:rgba(254,253,254,0.55);}
-    .ghl-placeholder{background:rgba(254,253,254,0.05);border:1px dashed rgba(143,175,154,0.4);border-radius:4px;padding:2rem;margin-top:2rem;text-align:center;}
-    .ghl-placeholder p{font-size:0.82rem;color:rgba(254,253,254,0.4);}
-    .ghl-placeholder code{font-size:0.75rem;color:var(--mist);font-family:monospace;}
+
 
     /* SECONDARY */
     .secondary{padding:4rem 2.5rem;background:var(--linen);}
@@ -829,7 +827,7 @@
         <h2 class="cta-heading reveal reveal-d1" id="cta-heading">Ready to Buy Land <em>and Build?</em></h2>
         <p class="cta-body reveal reveal-d2">You understand the process now. You know what to expect, the costs, the timeline, the common surprises. The question is: do you want to navigate this alone, or do you want someone in your corner who understands every step?</p>
         <div class="cta-actions reveal reveal-d3">
-          <a href="/contact.html" class="btn-forest">Schedule a Land and Build Consultation</a>
+          <button onclick="openLandBuildForm()" class="btn-forest">Schedule a Land and Build Consultation</button>
           <a href="tel:8596124044" class="btn-outline-light">Call 859-612-4044</a>
         </div>
         <div class="cta-talk-points reveal">
@@ -837,10 +835,27 @@
           <p class="cta-talk-point">Your timeline, your priorities, and how we guide you through the whole process.</p>
           <p class="cta-talk-point">No pressure. No sales pitch. Just an honest conversation about what's possible.</p>
         </div>
-        <div class="ghl-placeholder" role="form">
-          <p>Land and Build consultation form coming soon.</p>
-          <code>&lt;!-- GHL Form Embed Code --&gt;</code>
+        <!-- GHL LAND AND BUILD FORM -->
+        <div id="land-build-form-wrap" style="display:none;margin-top:2rem;">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/rKbEBp4tlDAXsUtVvIoL"
+            style="width:100%;border:none;border-radius:3px"
+            id="inline-rKbEBp4tlDAXsUtVvIoL"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="LAND PURCHASE FORM"
+            data-height="3168"
+            data-layout-iframe-id="inline-rKbEBp4tlDAXsUtVvIoL"
+            data-form-id="rKbEBp4tlDAXsUtVvIoL"
+            title="Land and Build Consultation Form"
+          ></iframe>
         </div>
+        <!-- END GHL FORM -->
       </div>
     </section>
 
@@ -978,6 +993,13 @@
     const reveals=document.querySelectorAll('.reveal');
     const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
     reveals.forEach(r=>obs.observe(r));
+
+    function openLandBuildForm() {
+      const wrap = document.getElementById('land-build-form-wrap');
+      wrap.style.display = 'block';
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   </script>
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
