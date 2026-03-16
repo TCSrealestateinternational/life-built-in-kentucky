@@ -160,9 +160,7 @@
     .contact-direct-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(254,253,254,0.4);}
     .contact-direct-val{font-size:0.95rem;color:rgba(254,253,254,0.8);transition:color var(--ease);}
     .contact-direct-val:hover{color:var(--mist);}
-    .ghl-placeholder{background:rgba(254,253,254,0.05);border:1px dashed rgba(143,175,154,0.4);border-radius:4px;padding:2rem;margin-bottom:2rem;text-align:center;}
-    .ghl-placeholder p{font-size:0.82rem;color:rgba(254,253,254,0.4);}
-    .ghl-placeholder code{font-size:0.75rem;color:var(--mist);font-family:monospace;}
+
 
     /* FOOTER */
     footer{background:var(--ink);color:rgba(254,253,254,0.75);padding:4rem 2.5rem 2rem;}
@@ -644,15 +642,31 @@
         <h2 class="lower-cta-heading" id="cta-heading">Ready to Build <em>on Your Land?</em></h2>
         <p class="lower-cta-body">Let's start with a free consultation. You tell us about your property and what you're hoping to build, and we'll give you an honest assessment of what it takes to get there — no pressure, no obligation.</p>
         <div class="lower-cta-actions">
-          <a href="/contact.html" class="btn-forest">Schedule Free Consultation</a>
+          <button onclick="openBuildForm()" class="btn-forest">Schedule Free Consultation</button>
           <a href="/contact.html" class="btn-outline-light">Send Us a Message</a>
         </div>
 
-        <!-- GHL FORM PLACEHOLDER -->
-        <div class="ghl-placeholder">
-          <p>GHL form embed goes here</p>
-          <code>&lt;!-- Replace this div with your GHL embed code --&gt;</code>
+        <!-- GHL BUILD ON YOUR LAND FORM -->
+        <div id="build-form-wrap" style="display:none;margin-top:2rem;">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/tr2DOuDdMmhXWwZ0T294"
+            style="width:100%;border:none;border-radius:3px"
+            id="inline-tr2DOuDdMmhXWwZ0T294"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="BUILD ON YOUR OWN LAND"
+            data-height="5902"
+            data-layout-iframe-id="inline-tr2DOuDdMmhXWwZ0T294"
+            data-form-id="tr2DOuDdMmhXWwZ0T294"
+            title="Build on Your Own Land Form"
+          ></iframe>
         </div>
+        <!-- END GHL FORM -->
 
         <div class="contact-direct">
           <div class="contact-direct-item">
@@ -760,6 +774,13 @@
         }
       });
     });
+
+    function openBuildForm() {
+      const wrap = document.getElementById('build-form-wrap');
+      wrap.style.display = 'block';
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   </script>
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
